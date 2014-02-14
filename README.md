@@ -5,7 +5,7 @@ get stats about your soup.io account
 
 Why
 ===
-soup.io is a popular tumblelog. But like his big brother tumblr it lacks on statistic informations about your posts.
+soup.io is a popular tumblog. But like her big brother tumblr it lacks on statistic informations about your posts.
 For example how many have you postet, how many repostet and what was reposted at most by others...
 
 Target
@@ -30,4 +30,4 @@ v1.5
 - add social tralala (share on xyz)
 
 v2
-- add other tumblelogs
+- add other tumblogs
