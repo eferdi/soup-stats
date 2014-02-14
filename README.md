@@ -17,13 +17,11 @@ v0.5
 - get the type of the posts and reposts
 - display some fancy charts
 - save data to be sure not to crawl the pages every time
-- 
 
 v0.9
 - get a live version vor this tool
 - bigges problem will be the crawler, he needs some time and have to run in background
 - multi user support (register, login, delete...)
-- 
 
 v1
 - tested version of all above
