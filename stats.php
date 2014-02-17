@@ -11,20 +11,20 @@
     $postsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid']);
 
     $tpl = new raintpl(); //include Rain TPL
-    $tpl->assign( "soupName",  $user[0]['cusername']); // assign an array
+    $tpl->assign("soupName",  $user[0]['cusername']); // assign an array
 
-    $tpl->assign( "postCount", $postsByType[0]['cpostCount']); // assign variable
-    $tpl->assign( "repostCount",  $postsByType[1]['cpostCount']); // assign an array
+    $tpl->assign("postCount", $postsByType[0]['cpostCount']); // assign variable
+    $tpl->assign("repostCount",  $postsByType[1]['cpostCount']); // assign an array
 
-    $tpl->assign( "postTypeRegularCount", 0);
-    $tpl->assign( "postTypeLinkCount", 0);
-    $tpl->assign( "postTypeQuoteCount", 0);
-    $tpl->assign( "postTypeImageCount", 0);
-    $tpl->assign( "postTypeVideoCount", 0);
-    $tpl->assign( "postTypeFileCount", 0);
-    $tpl->assign( "postTypeReviewCount", 0);
-    $tpl->assign( "postTypeEventCount", 0);
-    $tpl->assign( "postTypeOthersCount", 0);
+    $tpl->assign("postTypeRegularCount", 0);
+    $tpl->assign("postTypeLinkCount", 0);
+    $tpl->assign("postTypeQuoteCount", 0);
+    $tpl->assign("postTypeImageCount", 0);
+    $tpl->assign("postTypeVideoCount", 0);
+    $tpl->assign("postTypeFileCount", 0);
+    $tpl->assign("postTypeReviewCount", 0);
+    $tpl->assign("postTypeEventCount", 0);
+    $tpl->assign("postTypeOthersCount", 0);
 
 
     foreach ($postsByContentType as $postContentType)
@@ -32,31 +32,31 @@
         switch($postContentType['ccontenttype'])
         {
             case "REGULAR":
-                $tpl->assign( "postTypeRegularCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeRegularCount", $postContentType['cpostCount']);
                 break;
             case "LINK":
-                $tpl->assign( "postTypeLinkCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeLinkCount", $postContentType['cpostCount']);
                 break;
             case "QUOTE":
-                $tpl->assign( "postTypeQuoteCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeQuoteCount", $postContentType['cpostCount']);
                 break;
             case "IMAGE":
-                $tpl->assign( "postTypeImageCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeImageCount", $postContentType['cpostCount']);
                 break;
             case "VIDEO":
-                $tpl->assign( "postTypeVideoCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeVideoCount", $postContentType['cpostCount']);
                 break;
             case "FILE":
-                $tpl->assign( "postTypeFileCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeFileCount", $postContentType['cpostCount']);
                 break;
             case "REVIEW":
-                $tpl->assign( "postTypeReviewCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeReviewCount", $postContentType['cpostCount']);
                 break;
             case "EVENT":
-                $tpl->assign( "postTypeEventCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeEventCount", $postContentType['cpostCount']);
                 break;
             default:
-                $tpl->assign( "postTypeOthersCount", $postContentType['cpostCount']);
+                $tpl->assign("postTypeOthersCount", $postContentType['cpostCount']);
                 break;
         }
     }
