@@ -6,7 +6,7 @@
     raintpl::$cache_dir = "tmp/"; // cache directory
 
     $db = new soupStatsDB();
-    $user = $db->findUser($_POST['soupName']);
+    $user = $db->findUser($_REQUEST['soup']);
     $postsByType = $db->getPostsByUserGroupedByType($user[0]['csoupid']);
     $postsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid']);
 
