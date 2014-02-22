@@ -58,5 +58,41 @@ class soupDB extends databaseConnection
         parent::bindParam($paramValues);
         return parent::execute();
     }
+    
+    public function findReposter($soupID, $soupPost, $soupReposterID)
+    {
+        $sql = "select * from tstatsreposts where csoupid = :soupid and cpostid = :postid and creposterid = :reposterid";
+	
+        $paramValues = array(   ":soupid"	=> $soupID,
+                                ":postid"	=> $soupPost,
+                                ":reposterid"	=> $soupReposterID
+                            );
+
+        parent::prepareSQL($sql, "read");
+        parent::bindParam($paramValues);
+        return parent::execute();
+    }
+    
+    public function addReposter($soupID, $soupPostID, $soupReposterID, $soupReposterName)
+    {
+        $result = $this->findReposter($soupID, $soupPostID, $soupReposterID);
+        
+        if(!$result)
+        {
+            $sql = "insert into tstatsreposts (csoupid, cpostid, creposterid, crepostername) values (:soupid, :postid, :reposterid, :repostername)";
+
+            $paramValues = array(   ":soupid" => $soupID,
+                                    ":postid"   => $soupPostID,
+                                    ":reposterid"   => $soupReposterID,
+                                    ":repostername"   => $soupReposterName
+                                );
+
+            parent::prepareSQL($sql, "write");
+            parent::bindParam($paramValues);
+            return parent::execute();
+        }
+
+        return $result;
+    }
 }
 ?>

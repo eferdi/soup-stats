@@ -10,7 +10,7 @@
 	require("../vendor/autoload.php");
 	require("db_soup.class.php");
 
-	$mainUrl = "hxxp://<username>.soup.io";
+	$mainUrl = "http://manni.soup.io";
 	$loopStop = $mainUrl;
 	$url = $mainUrl;
 	$next = null;
@@ -19,6 +19,8 @@
 
     $db = new soupDB();
     $soupID = "";
+    $soupPostID_tmp = "";
+    $soupRepostCounterCorrection = 0;
     $statsPosts = array();
     $statsRePosts = array();
     $statsError = array();
@@ -88,13 +90,43 @@
         return 0;
     }
 
+	function analyseRePoster($index, $elementDOMNode)
+        {
+            global $db;
+            global $soupID;
+            global $soupPostID_tmp;
+            global $soupRepostCounterCorrection;
+            
+            //print $element->tagName . PHP_EOL;
+            $element = qp($elementDOMNode);
+            $cssClasses = $element->attr("class");
+
+            $cssTMP = explode(" ", $cssClasses);
+            if($cssTMP[0] == "name")
+            {
+                $soupRepostCounterCorrection++;
+            }
+            else
+            {
+                $soupReposterID = $cssTMP[2];
+                $url = $element->find("a.url")->attr("href");
+                $parsedURL = parse_url($url);
+                $host = explode(".", $parsedURL['host']);
+                $soupReposterName = $host[0];
+            
+                $db->addReposter($soupID, $soupPostID_tmp, $soupReposterID, $soupReposterName);
+            }
+        }
+        
 	function analysePost($index, $elementDOMNode)
         {
             global $db;
             global $soupID;
+            global $soupPostID_tmp;
             global $statsPosts;
             global $statsRePosts;
             global $statsErrors;
+            global $soupRepostCounterCorrection;
 
             $postOrRePost = "";
             $string = "";
@@ -119,6 +151,7 @@
 
                 // *** post ID ***
                 $postID = $element->attr("id");
+                $soupPostID_tmp = $postID;
                 $string .= "REPosted ";
                 $string .= substr($postID, 4) . " ";
 
@@ -164,7 +197,8 @@
             $string .= $postDate . " " . $postTime . " ";
 
             // *** repost counter ***
-            $postRepostCounter = count($element->find("div.reposted_by span"));
+            $postReposts = $element->find("div.reposted_by span");
+            $postRepostCounter = count($postReposts);
             if($postRepostCounter == 1)
             {
                 $string .= "and was reposted by one person ";
@@ -173,6 +207,8 @@
             {
                 $string .= "and was reposted " . $postRepostCounter . " times ";
             }
+            
+            $postReposter = $postReposts->each("analyseRePoster");
 
             echo $string ."\n";
 
@@ -196,7 +232,7 @@
                                     ":cfromsoupid"   => $posterID,
                                     ":cviasoupname"  => $viaName,
                                     ":cviasoupid"    => $viaID,
-                                    ":crepostcounter" => $postRepostCounter,
+                                    ":crepostcounter" => $postRepostCounter - $soupRepostCounterCorrection,
                                     ":cdate"         => $postDate,
                                     ":ctime"         => $postTime,
                                     ":cposttype"     => $postOrRePost,
@@ -204,6 +240,8 @@
                                     ":creaction"     => $postIsReaction,
                                     ":cimported"     => $postIsImported
                                 );
+            
+            $soupRepostCounterCorrection = 0;
         }
 
 

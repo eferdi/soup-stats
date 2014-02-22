@@ -1,53 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
-    <meta charset=utf-8 />
+    <link href="basic.css" rel="stylesheet" type="text/css"/>
     <title>{$soupName}'s soup.io stats</title>
 </head>
 <body>
-    <div id="container-donut-posts">
-        <h3 class="donut-headline">posts by type</h3>
-        <div id="donut-posts-by-type"></div>
-
-        <h3 class="donut-headline">posts by content type</h3>
-        <div id="donut-posts-by-contenttype" class="donut-posts"></div>
+    <div id="donuts-overall" class="container-donut-posts">
+        <h2 class="donut-categorie categorie">posts overall ...</h2>
+        
+        <div class="donut-container">
+            <h3 class="donut-headline">... by type</h3>
+            <div id="donut-posts-by-type" class="donut-chart"></div>
+        </div>
+        <div class="donut-container">
+            <h3 class="donut-headline">... by content type</h3>
+            <div id="donut-posts-by-contenttype" class="donut-chart"></div>
+        </div>
+    </div>
+    
+    <br/>
+    
+    <div id="donuts-by-type" class="container-donut-posts">
+        <h2 class="donut-categorie categorie">content by post type ...</h2>
+        
+        <div class="donut-container">
+            <h3 class="donut-headline">... post</h3>
+            <div id="donut-content-by-posttype-post" class="donut-chart"></div>
+        </div>
+        <div class="donut-container">
+            <h3 class="donut-headline">... repost</h3> 
+            <div id="donut-content-by-posttype-repost" class="donut-chart"></div>
+        </div>
+    </div>
+    
+    <br/>
+    
+    <div>
+        <h2 class="toplists-categorie categorie">toplists</h2>
+        
+        <div class="toplist-container">
+            <h3 class="toplist-headline">your top posts</h3>
+            <div id="toplist-posts" class="toplist"></div>
+        </div>
+        <div class="toplist-container">
+            <h3 class="toplist-headline">top reposter</h3>
+            <div id="toplist-reposter" class="toplist"></div>
+        </div>
+        <div class="toplist-container">
+            <h3 class="toplist-headline">your favorit soup users</h3>
+            <div id="toplist-fav-users" class="toplist"></div>
+        </div>
     </div>
 
+    <br/>
+    
+    <div>
+        <h2 class="activity-categorie categorie">your activities in ...</h2>
+        <h3 class="activity-headline">... the last 7 days</h3>
+        <div id="activity-last-7-days" class="activity-chart"></div>
+        
+        <h3 class="activity-headline">... the last 3 months</h3>
+        <div id="activity-last-3-months" class="activity-chart"></div>
+        
+        <h3 class="activity-headline">... this year</h3>
+        <div id="activity-this-year" class="activity-chart"></div>
+        
+        <h3 class="activity-headline">... the last year</h3>
+        <div id="activity-last-year" class="activity-chart"></div>
+    </div>
+    
     <script type="text/javascript">
         var postCount = {$postCount};
         var repostCount = {$repostCount};
 
         Morris.Donut({
             element: 'donut-posts-by-type',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
             data: [
                 {label: "posts", value: postCount},
                 {label: "reposts", value: repostCount}
             ]
         });
 
-        var postTypeRegularCount = {$postTypeRegularCount};
-        var postTypeLinkCount = {$postTypeLinkCount};
-        var postTypeQuoteCount = {$postTypeQuoteCount};
-        var postTypeImageCount = {$postTypeImageCount};
-        var postTypeVideoCount = {$postTypeVideoCount};
-        var postTypeFileCount = {$postTypeFileCount};
-        var postTypeReviewCount = {$postTypeReviewCount};
-        var postTypeEventCount = {$postTypeEventCount};
-
+        var allPostTypeRegularCount =  {$postTypeRegularCount} + {$repostTypeRegularCount};
+        var allPostTypeLinkCount =     {$postTypeLinkCount} + {$repostTypeLinkCount};
+        var allPostTypeQuoteCount =    {$postTypeQuoteCount} + {$repostTypeQuoteCount};
+        var allPostTypeImageCount =    {$postTypeImageCount} + {$repostTypeImageCount};
+        var allPostTypeVideoCount =    {$postTypeVideoCount} + {$repostTypeVideoCount};
+        var allPostTypeFileCount =     {$postTypeFileCount} + {$repostTypeFileCount};
+        var allPostTypeReviewCount =   {$postTypeReviewCount} + {$repostTypeReviewCount};
+        var allPostTypeEventCount =    {$postTypeEventCount} + {$repostTypeEventCount};
+        
         Morris.Donut({
             element: 'donut-posts-by-contenttype',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
             data: [
-                {label: "texts", value: postTypeRegularCount},
-                {label: "links", value: postTypeLinkCount},
-                {label: "quotes", value: postTypeQuoteCount},
-                {label: "images", value: postTypeImageCount},
-                {label: "videos", value: postTypeVideoCount},
-                {label: "files", value: postTypeFileCount},
-                {label: "reviews", value: postTypeReviewCount},
-                {label: "events", value: postTypeEventCount}
+                {label: "texts",    value: allPostTypeRegularCount},
+                {label: "images",   value: allPostTypeImageCount},
+                {label: "links",    value: allPostTypeLinkCount}, 
+                {label: "quotes",   value: allPostTypeQuoteCount},                
+                {label: "videos",   value: allPostTypeVideoCount},
+                {label: "files",    value: allPostTypeFileCount},
+                {label: "reviews",  value: allPostTypeReviewCount},
+                {label: "events",   value: allPostTypeEventCount}
+            ]
+        });
+        
+        var postCount = {$postCount};
+        var repostCount = {$repostCount};
+
+        Morris.Donut({
+            element: 'donut-content-by-posttype-post',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
+            data: [
+                {label: "texts",    value: {$postTypeRegularCount}},
+                {label: "images",   value: {$postTypeImageCount}},
+                {label: "links",    value: {$postTypeLinkCount}}, 
+                {label: "quotes",   value: {$postTypeQuoteCount}},                
+                {label: "videos",   value: {$postTypeVideoCount}},
+                {label: "files",    value: {$postTypeFileCount}},
+                {label: "reviews",  value: {$postTypeReviewCount}},
+                {label: "events",   value: {$postTypeEventCount}}
+            ]
+        });
+        
+        Morris.Donut({
+            element: 'donut-content-by-posttype-repost',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
+            data: [
+                {label: "texts",    value: {$repostTypeRegularCount}},
+                {label: "images",   value: {$repostTypeImageCount}},
+                {label: "links",    value: {$repostTypeLinkCount}}, 
+                {label: "quotes",   value: {$repostTypeQuoteCount}},                
+                {label: "videos",   value: {$repostTypeVideoCount}},
+                {label: "files",    value: {$repostTypeFileCount}},
+                {label: "reviews",  value: {$repostTypeReviewCount}},
+                {label: "events",   value: {$repostTypeEventCount}}
             ]
         });
     </script>

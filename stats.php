@@ -8,7 +8,13 @@
     $db = new soupStatsDB();
     $user = $db->findUser($_REQUEST['soup']);
     $postsByType = $db->getPostsByUserGroupedByType($user[0]['csoupid']);
-    $postsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid']);
+    //$allPostsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid']);
+    $postsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid'], "post");
+    $repostsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid'], "repost");
+    
+    $topPosts = $db->getPosts($user[0]['csoupid']);
+    $topFavs = $db->getTopFavs($user[0]['csoupid']);
+    $topReposter = $db->getTopReposter($user[0]['csoupid']);
 
     $tpl = new raintpl(); //include Rain TPL
     $tpl->assign("soupName",  $user[0]['cusername']); // assign an array
@@ -25,6 +31,16 @@
     $tpl->assign("postTypeReviewCount", 0);
     $tpl->assign("postTypeEventCount", 0);
     $tpl->assign("postTypeOthersCount", 0);
+    
+    $tpl->assign("repostTypeRegularCount", 0);
+    $tpl->assign("repostTypeLinkCount", 0);
+    $tpl->assign("repostTypeQuoteCount", 0);
+    $tpl->assign("repostTypeImageCount", 0);
+    $tpl->assign("repostTypeVideoCount", 0);
+    $tpl->assign("repostTypeFileCount", 0);
+    $tpl->assign("repostTypeReviewCount", 0);
+    $tpl->assign("repostTypeEventCount", 0);
+    $tpl->assign("repostTypeOthersCount", 0);
 
 
     foreach ($postsByContentType as $postContentType)
@@ -57,6 +73,40 @@
                 break;
             default:
                 $tpl->assign("postTypeOthersCount", $postContentType['cpostCount']);
+                break;
+        }
+    }
+    
+    foreach ($repostsByContentType as $repostContentType)
+    {
+        switch($repostContentType['ccontenttype'])
+        {
+            case "REGULAR":
+                $tpl->assign("repostTypeRegularCount", $repostContentType['cpostCount']);
+                break;
+            case "LINK":
+                $tpl->assign("repostTypeLinkCount", $repostContentType['cpostCount']);
+                break;
+            case "QUOTE":
+                $tpl->assign("repostTypeQuoteCount", $repostContentType['cpostCount']);
+                break;
+            case "IMAGE":
+                $tpl->assign("repostTypeImageCount", $repostContentType['cpostCount']);
+                break;
+            case "VIDEO":
+                $tpl->assign("repostTypeVideoCount", $repostContentType['cpostCount']);
+                break;
+            case "FILE":
+                $tpl->assign("repostTypeFileCount", $repostContentType['cpostCount']);
+                break;
+            case "REVIEW":
+                $tpl->assign("repostTypeReviewCount", $repostContentType['cpostCount']);
+                break;
+            case "EVENT":
+                $tpl->assign("repostTypeEventCount", $repostContentType['cpostCount']);
+                break;
+            default:
+                $tpl->assign("repostTypeOthersCount", $repostContentType['cpostCount']);
                 break;
         }
     }
