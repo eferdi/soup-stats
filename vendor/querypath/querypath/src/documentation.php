@@ -58,7 +58,7 @@
  *
  *   - The official QueryPath site http://querypath.org
  *   - The latest API docs http://api.querypath.org
- *   - IBM DeveloperWorks Intro to QueryPath http://www.ibm.com/developerworks/web/library/os-php-querypath/index.html 
+ *   - IBM DeveloperWorks Intro to QueryPath http://www.ibm.com/developerworks/web/library/os-php-querypath/stats.html
  *   - QueryPath articles at TechnoSophos.Com http://technosophos.com/qp/articles
  *   - The QueryPath GitHub repository http://github.com/technosophos/querypath
  *

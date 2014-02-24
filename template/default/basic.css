@@ -1,0 +1,17 @@
+.donut-container
+{
+    float: left;
+    margin-left:10%;
+    text-align:center;
+}
+
+.donut-chart
+{
+    width: 300px;
+    height: 300px;
+}
+
+.container-donut-posts
+{
+    height: 400px;
+}

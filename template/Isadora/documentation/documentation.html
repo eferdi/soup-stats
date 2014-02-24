@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+		<meta charset="UTF-8">
+		<title>Isadora Documentation</title></title>
+		<meta name="author" content="Velko Georgiev">
+		
+	    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/skeleton.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/layout.css">
+		
+		<script src="js/jquery.v1.10.2.js"></script>
+		<script src="js/prettify.js"></script>
+		
+		<body onload="prettyPrint()">
+			<div style="padding:3px 0px">
+				<asp:Label ID="lblTotalAns" runat="server" Text="0 Answers" CssClass="ansHeading" />
+				</div>
+		</body>
+		
+   </head>
+ <body>
+		
+	<div class="container">
+	
+		<div class="header-desc">"Isadora" Documentation by "Velko Georgiev" v1.0</div>
+			<header>
+				<h1>"Isadora"</h1>
+				<div class="eight columns">
+					<p><strong>Created:</strong> 17/02/2014</p>
+					<p><strong>By:</strong> Velko Georgiev</p>
+					<p><strong>Email:</strong> v.georgiev81@gmail.com</p></div>
+				<div class="eight columns"><span>Thank You For Purchasing My Theme. If You Have Any Questions, Please Feel Free to Email Me. Thank You Very Much!</span></div>
+			</header>
+			
+			<div class="row"></div>
+	    
+	<section id="table-contents">
+		<h2>Table of Contents</h2>
+
+				<ul>
+					<li><a href="#basic">A. Basic Settings</a></li>
+					<li><a href="#css-structure">B. CSS Structure</a></li>
+					<li><a href="#fonts">C. Fonts</a></li>
+					<li><a href="#slider">D. Slider</a></li>
+					<li><a href="#navigation">E. Navigation</a></li>
+					<li><a href="#about-me">F. About Me</a></li>
+					<li><a href="#experience">G. Experience</a></li>
+					<li><a href="#education">H. Education</a></li>
+					<li><a href="#services">I. Services</a></li>
+					<li><a href="#piechart">J. Piechart (Skills)</a></li>
+					<li><a href="#portfolio">K. Portfolio</a></li>
+					<li><a href="#blog">L. Recent Blog Posts</a></li>
+					<li><a href="#contact-form">M. Contact Form</a></li>
+					<li><a href="#contact-info">N. Contact Info</a></li>
+					<li><a href="#social-links">O. Social Links</a></li>
+					<li><a href="#project">P. Project Popup</a></li>
+					<li><a href="#javascript">Q. Javascript</a></li>
+					<li><a href="#credits">R. Source & Credits</a></li>
+				</ul>
+	</section>
+			
+	<section id="basic">
+		<h2>A.) Basic Settings <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Basic File Structure Looks Like The Code Below
+			<pre class="prettyprint"> 
+			&lt;!--==================== BASIC ====================--&gt;
+			&lt;meta charset=&quot;UTF-8&quot;&gt;
+			&lt;title&gt;Isadora - Responsive Resume &amp; Portfolio One Page Theme&lt;/title&gt;
+			&lt;meta name=&quot;description&quot; content=&quot;Your website description here&quot;&gt;
+			&lt;meta name=&quot;keywords&quot; content=&quot;Your keywords here&quot;&gt;
+			&lt;meta name=&quot;author&quot; content=&quot;Your author name here&quot;&gt;	
+			</pre>
+	</section>
+
+		<div class="row"></div>
+
+	<section id="css-structure">
+		<h2>B.) CSS Files Structure <a href="#table-contents">Top &uarr;</a></h2>
+			All Css Files are Located in .css Folder in The Download Folder
+			<pre class="prettyprint"> 
+			&lt;!--==================== CSS ====================--&gt;	
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;css/skeleton.css&quot;&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;css/base.css&quot;&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;css/layout.css&quot;&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot;&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;css/flexslider.css&quot;&gt;
+			</pre>	
+	</section>	
+				
+		<div class="row"></div>
+	
+	<section id="fonts">
+		<h2>C.) Fonts Use <a href="#table-contents">Top &uarr;</a></h2>		
+			<p>Isadora’s fonts:</p>
+				<ul>
+					<li><a href='http://www.fontsquirrel.com/fonts/bebas-neue'>BebasNeueRegular</a></li>
+					<li><a href='http://fortawesome.github.io/Font-Awesome/'>Font Awesome</a></li>
+					<li><a href='https://www.google.com/fonts'>Google Fonts Oswald</a></li>
+					<li><a href='https://www.google.com/fonts'>Google Fonts Raleway</a></li>
+					<li><a href='https://www.google.com/fonts'>Google Fonts Herr Von Muellerhoff</a></li>
+					<li><a href='https://www.google.com/fonts'>Google Fonts Montserrat Alternates</a></li>
+				</ul>
+
+		<pre class="prettyprint">
+			&lt;!--==================== GOOGLE FONTS ====================--&gt;
+			&lt;link href='http://fonts.googleapis.com/css?family=Raleway:100,300' rel='stylesheet' type='text/css'&gt;
+			&lt;link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'&gt;
+			&lt;link href='http://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff' rel='stylesheet' type='text/css'&gt;
+			&lt;link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:700' rel='stylesheet' type='text/css'&gt;
+		</pre>
+
+		<strong>You Can Also Change Font Family in style.css File Located Inside Download Folder</strong>
+		
+		<pre class="prettyprint">
+			font-family: "Oswald", sans-serif;
+			font-family: 'Raleway', sans-serif;
+		</pre>
+	</section>
+			   
+		<div class="row"></div>
+			   
+	<section id="slider">		
+		<h2>D.) Slider <a href="#table-contents">Top &uarr;</a></h2>		
+			Isadora's Flex Slider Structure Looks Like The Code Below
+		<pre class="prettyprint">		
+&lt;!--==================== SLIDER ====================--&gt;
+	&lt;section id=&quot;slider&quot; class=&quot;slider flexslider&quot;&gt; 
+		&lt;h3&gt;Isad&lt;span class=&quot;slide-color&quot;&gt;o&lt;/span&gt;ra&lt;br/&gt;&lt;span class=&quot;little&quot;&gt;Creative Resume Theme&lt;/span&gt;&lt;/h3&gt;
+			&lt;ul class=&quot;slides&quot;&gt;
+				&lt;li&gt;&lt;img src=&quot;img/slide/slide-img.png&quot; alt=&quot;slide1&quot;&gt;&lt;span class=&quot;overlay&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;img src=&quot;img/slide/slide-img.png&quot; alt=&quot;slide2&quot;&gt;&lt;span class=&quot;overlay&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;img src=&quot;img/slide/slide-img.png&quot; alt=&quot;slide3&quot;&gt;&lt;span class=&quot;overlay&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+	&lt;/section&gt;
+&lt;!--==================== END SLIDER ====================--&gt;	
+		</pre>		
+				
+		<strong>To Change Flex Slider Images go to img/slide Folder and Replace Placeholder Images With Yours.</strong>
+	</section>
+			   
+		<div class="row"></div>
+	
+	<section id="navigation">
+		<h2>E.) Navigation <a href="#table-contents">Top &uarr;</a></h2>
+
+	Isadora's Navigation Menu is Built With an Unordered List (ul) and Each Element of the Navigation is a List Item (li). Here is The Navigation Structure:
+		
+		<pre class="prettyprint"> 
+&lt;!--==================== NAVIGATION ====================--&gt;
+	&lt;section id=&quot;nav&quot;&gt;  
+		&lt;label class=&quot;collapse&quot; for=&quot;_1&quot;&gt;
+			&lt;i class=&quot;menu-icon fa fa-bars&quot;&gt;&lt;/i&gt;
+				&lt;/label&gt;
+					&lt;input id=&quot;_1&quot; type=&quot;checkbox&quot;&gt; 
+						&lt;div&gt;
+							&lt;ul&gt;
+								&lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;#slider&quot; title=&quot;Home&quot;&gt;&lt;i class=&quot;nav-icon fa fa-home&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#about-me&quot; title=&quot;About Me&quot;&gt;&lt;i class=&quot;nav-icon fa fa-user&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#experience&quot; title=&quot;Experience&quot;&gt;&lt;i class=&quot;nav-icon fa fa-briefcase&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#education&quot; title=&quot;Education&quot;&gt;&lt;i class=&quot;nav-icon fa fa-book&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#skills&quot; title=&quot;Skills&quot;&gt;&lt;i class=&quot;nav-icon fa fa-html5&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#portfolio&quot; title=&quot;Portfolio&quot;&gt;&lt;i class=&quot;nav-icon fa fa-camera-retro&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#blog&quot; title=&quot;Blog&quot;&gt;&lt;i class=&quot;nav-icon fa fa-coffee&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#contact&quot; title=&quot;Contact&quot;&gt;&lt;i class=&quot;nav-icon fa fa-inbox&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; 
+								&lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--==================== END NAVIGATION ====================--&gt;	
+		</pre>	
+	</section>
+			   
+		<div class="row"></div>
+		
+	<section id="about-me">
+		<h2>F.) About Me <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's About Me Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--==================== ABOUT ME ====================--&gt;
+	&lt;section id=&quot;about-me&quot; class=&quot;about-me&quot;&gt;
+		&lt;h2&gt;Isadora Dow&lt;/h2&gt;
+			&lt;h3&gt;Web Designer, Wordpress Developer&lt;/h3&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu sollicitudin sem. 
+				Nullam vehicula ligula sed porttitor porta. Nam mi erat, congue eu molestie at, imperdiet et massa.
+				Donec congue, tellus vel faucibus cursus, metus felis lobortis tortor, non egestas tellus mauris non nulla. 
+				Donec eget tellus eros. Suspendisse nibh lacus, ultrices eu dignissim sed, consequat nec lacus. 
+				Integer sed tempor sapien. Cras mattis vitae nisi non tincidunt.
+				Donec aliquam fringilla vulputate. Pellentesque quis lacinia ante. 
+				Integer sit amet tincidunt nibh. Mauris sit amet turpis eu nunc faucibus vestibulum. 
+				Etiam non gravida ipsum, id aliquam lacus&lt;/p&gt;		
+			&lt;div class=&quot;signature&quot;&gt;Signature&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--==================== END ABOUT ME ====================--&gt;	
+		</pre>	
+	</section>	
+	
+		<div class="row"></div>
+		
+	<section id="experience">
+		<h2>G.) Experience <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Experience Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--==================== EXPERIENCE ====================--&gt;			
+	&lt;section id=&quot;experience&quot;&gt;
+		&lt;h2&gt;&lt;span class=&quot;color&quot;&gt;My&lt;/span&gt; Experience&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-briefcase fa-2x&quot;&gt;&lt;/i&gt;
+						&lt;/div&gt;
+			&lt;/div&gt;
+	
+		&lt;div class=&quot;eight columns experience&quot;&gt;
+			&lt;h3&gt;Web Creative Enterprises&lt;/h3&gt;
+				&lt;h4&gt;Front-end Developer (2011-2012)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;
+					   
+		&lt;div class=&quot;eight columns experience&quot;&gt;
+			&lt;h3&gt;Acme Enterprises&lt;/h3&gt;
+				&lt;h4&gt;Graphic Designer (2010-2011)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;	   
+					   
+		&lt;div class=&quot;eight columns experience&quot;&gt;
+			&lt;h3&gt;Urban River Creative&lt;/h3&gt;
+				&lt;h4&gt;Web Development (2009-2010)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;		   
+		
+		&lt;div class=&quot;eight columns experience&quot;&gt;
+			&lt;h3&gt;Freelance&lt;/h3&gt;
+				&lt;h4&gt;Freelance Web Developer (2008-2009)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--==================== END EXPERIENCE ====================--&gt;		
+		</pre>	
+	</section>	
+	
+		<div class="row"></div>	
+		
+	<section id="education">
+		<h2>H.) Education <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Education Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--==================== EDUCATION ====================--&gt;	
+	&lt;section id=&quot;education&quot;&gt;
+		&lt;h2&gt;&lt;span class=&quot;color&quot;&gt;My&lt;/span&gt; Education&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-book fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+	
+		&lt;div class=&quot;eight columns education&quot;&gt;
+			&lt;h3&gt;College&lt;/h3&gt;
+				&lt;h4&gt;Harvard University (November, 2008)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;
+					   
+		&lt;div class=&quot;eight columns education&quot;&gt;
+			&lt;h3&gt;Graphic &amp; Web Designer&lt;/h3&gt;
+				&lt;h4&gt;Webdesign University (November, 2007)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;			   
+					   
+		&lt;div class=&quot;eight columns education&quot;&gt;
+			&lt;h3&gt;Schooling&lt;/h3&gt;
+				&lt;h4&gt;High Secondary School (Mart, 2006)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;
+					   	   
+		&lt;div class=&quot;eight columns education&quot;&gt;
+			&lt;h3&gt;Schooling&lt;/h3&gt;
+				&lt;h4&gt;High School (Mart, 2005)&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--==================== END EDUCATION ====================--&gt;
+		</pre>	
+	</section>	
+	
+		<div class="row"></div>	
+		
+	<section id="services">
+		<h2>I.) Services <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Services Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--==================== SERVICES ====================--&gt;		
+	&lt;section id=&quot;services&quot; class=&quot;services&quot;&gt;
+		&lt;h2&gt;&lt;span class=&quot;color&quot;&gt;My&lt;/span&gt; Services&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-cogs fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+	
+		&lt;div class=&quot;one-third column left-service&quot;&gt;
+			&lt;div class=&quot;left&quot;&gt;&lt;i class=&quot;service-icon-left fa fa-tablet fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Responsive Webdesign&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+			&lt;/div&gt;
+	
+			&lt;div class=&quot;left&quot;&gt;&lt;i class=&quot;service-icon-left fa fa-cog fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Wordpress Development&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+			&lt;/div&gt;
+					   
+			&lt;div class=&quot;left&quot;&gt;&lt;i class=&quot;service-icon-left fa fa-laptop fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Graphic Design&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+		&lt;div class=&quot;one-third column middle&quot;&gt;
+			&lt;img src=&quot;img/tablet.png&quot; alt=&quot;tablet&quot;&gt;
+		&lt;/div&gt;
+	
+		&lt;div class=&quot;one-third column right-services&quot;&gt;
+			&lt;div class=&quot;right&quot;&gt;&lt;i class=&quot;service-icon-right fa fa-pencil-square-o fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Copywriting&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+			&lt;/div&gt;
+	
+			&lt;div class=&quot;right&quot;&gt;&lt;i class=&quot;service-icon-right fa fa-twitter fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Social Marketing&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+			&lt;/div&gt;
+					   
+			&lt;div class=&quot;right&quot;&gt;&lt;i class=&quot;service-icon-right fa fa-search-plus fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;SEO Optimization&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					   Cras fermentum eros arcu, iaculis fermentum est pharetra et.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--==================== END SERVICES ====================--&gt;
+		</pre>	
+	</section>	
+	
+		<div class="row"></div>	
+		
+	<section id="piechart">
+		<h2>J.) Piechart (Skills) <a href="#table-contents">Top &uarr;</a></h2>
+			Isadora's Chart Structure Looks Like the Code Below
+		<pre class="prettyprint">		
+&lt;!--==================== SKILLS ====================--&gt;				
+	&lt;section id=&quot;skills&quot;&gt;
+		&lt;h2&gt;&lt;span class=&quot;color&quot;&gt;My&lt;/span&gt; Skills&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-html5 fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+	
+		&lt;div class=&quot;four columns&quot;&gt;
+			&lt;div class=&quot;chart&quot; data-percent=&quot;87&quot;&gt;
+				&lt;span class=&quot;percent&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;skill&quot;&gt;Photoshop&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;four columns&quot;&gt;
+			&lt;div class=&quot;chart&quot; data-percent=&quot;77&quot;&gt;
+				&lt;span class=&quot;percent&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;skill&quot;&gt;HTML/CSS&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;four columns&quot;&gt;
+			&lt;div class=&quot;chart&quot; data-percent=&quot;67&quot;&gt;
+				&lt;span class=&quot;percent&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;skill&quot;&gt;Jquery&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;four columns&quot;&gt;
+			&lt;div class=&quot;chart&quot; data-percent=&quot;57&quot;&gt;
+				&lt;span class=&quot;percent&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;skill&quot;&gt;PHP/MySQL&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--==================== END SKILLS ====================--&gt;	
+		</pre>		
+				
+		<strong>To Change Charts Percent Change Value of data-percent="87" in The Code Below</strong>
+		<pre class="prettyprint">
+		&lt;div class=&quot;chart&quot; data-percent=&quot;87&quot;&gt;</pre>	
+	</section>	
+	
+		<div class="row"></div>
+
+	<section id="portfolio">
+		<h2>K.) Portfolio <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Portfolio Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--==================== PORTFOLIO ====================--&gt;
+	&lt;section id=&quot;portfolio&quot;&gt;
+		&lt;h2&gt;&lt;span class=&quot;color&quot;&gt;My&lt;/span&gt; Portfolio&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-camera-retro fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			
+		&lt;!-- Filter Menu --&gt;
+			&lt;div class=&quot;portfolioFilter&quot;&gt;
+				&lt;a class=&quot;filter&quot; data-filter=&quot;webdesign&quot;&gt;Webdesign&lt;/a&gt;
+				&lt;a class=&quot;filter&quot; data-filter=&quot;photography&quot;&gt;Photography&lt;/a&gt;
+				&lt;a class=&quot;filter&quot; data-filter=&quot;all&quot;&gt;All&lt;/a&gt;
+				&lt;a class=&quot;filter&quot; data-filter=&quot;branding&quot;&gt;Branding&lt;/a&gt;
+				&lt;a class=&quot;filter&quot; data-filter=&quot;development&quot;&gt;Development&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;!-- Filter Menu --&gt;
+
+		&lt;!-- Portfolio Images --&gt;
+				&lt;ul id=&quot;Grid&quot; class=&quot;portfolioContainer&quot;&gt;
+				
+				&lt;!-- Project 1 --&gt;
+					&lt;li class=&quot;mix webdesign&quot; data-cat=&quot;webdesign&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 1 --&gt;
+					
+				&lt;!-- Project 2 --&gt;
+					&lt;li class=&quot;mix webdesign&quot; data-cat=&quot;webdesign&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 2 --&gt;
+					
+				&lt;!-- Project 3 --&gt;
+					&lt;li class=&quot;mix webdesign&quot; data-cat=&quot;webdesign&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 3 --&gt;
+					
+				&lt;!-- Project 4 --&gt;
+					&lt;li class=&quot;mix photography&quot; data-cat=&quot;photography&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 4 --&gt;
+					
+				&lt;!-- Project 5 --&gt;
+					&lt;li class=&quot;mix photography&quot; data-cat=&quot;photography&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 5 --&gt;
+					
+				&lt;!-- Project 6 --&gt;
+					&lt;li class=&quot;mix photography&quot; data-cat=&quot;photography&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 6 --&gt;
+			
+				&lt;!-- Project 7 --&gt;
+					&lt;li class=&quot;mix branding&quot; data-cat=&quot;branding&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 7 --&gt;
+			
+				&lt;!-- Project 8 --&gt;
+					&lt;li class=&quot;mix branding&quot; data-cat=&quot;branding&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 8 --&gt;
+			
+				&lt;!-- Project 9 --&gt;
+					&lt;li class=&quot;mix branding&quot; data-cat=&quot;branding&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 9 --&gt;
+				
+				&lt;!-- Project 10 --&gt;
+					&lt;li class=&quot;mix development&quot; data-cat=&quot;development&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 10 --&gt;
+			
+				&lt;!-- Project 11 --&gt;
+					&lt;li class=&quot;mix development&quot; data-cat=&quot;development&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 11 --&gt;
+					
+				&lt;!-- Project 12 --&gt;
+					&lt;li class=&quot;mix development&quot; data-cat=&quot;development&quot;&gt;
+						&lt;div class=&quot;project project-view&quot;&gt;
+							&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+								&lt;div class=&quot;project-mask&quot;&gt;
+									&lt;a class=&quot;project_open&quot; href=&quot;project&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+								&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Project 12 --&gt;
+			
+				&lt;/ul&gt;&lt;!-- End Portfolio Images --&gt;
+	&lt;/section&gt;
+&lt;!--==================== END PORTFOLIO ====================--&gt;
+		</pre>
+		
+	To Change Placeholder Images With Yours Replace "project-img.png" With Your Images
+	<pre class="prettyprint">
+	&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+	</pre>
+	</section>	
+	
+		<div class="row"></div>
+						
+	<section id="blog">
+		<h2>L.) Recent Blog Posts <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Recent Blog Posts Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--==================== RECENT BLOG POST ====================--&gt;			
+	&lt;section id=&quot;blog&quot; class=&quot;blog&quot;&gt;
+		&lt;h2&gt;&lt;span class=&quot;color&quot;&gt;Recent&lt;/span&gt; Blog Post&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-coffee fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+	
+	&lt;!-- Blog Post 1 --&gt;	
+		&lt;div class=&quot;one-third column&quot;&gt;
+			&lt;div class=&quot;date&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;11&lt;/li&gt;
+                    &lt;li&gt;Jan&lt;/li&gt;
+                &lt;/ul&gt;
+             &lt;/div&gt;
+				&lt;div class=&quot;blog-view&quot;&gt;
+					&lt;img src=&quot;img/blog/blog-img.png&quot; alt=&quot;post1&quot;&gt;
+						&lt;div class=&quot;blog-mask&quot;&gt;
+							&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;blog-link fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt; 
+					&lt;h3&gt;Recent Blog Post One&lt;/h3&gt;
+						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nulla augue, malesuada eget sapien ac, dictum eleifend odio. Morbi rutrum.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Blog Post 1 --&gt;
+									
+	&lt;!-- Blog Post 2 --&gt;						
+		&lt;div class=&quot;one-third column&quot;&gt;
+			&lt;div class=&quot;date&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;11&lt;/li&gt;
+                    &lt;li&gt;Jan&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+				&lt;div class=&quot;blog-view&quot;&gt;
+					&lt;img src=&quot;img/blog/blog-img.png&quot; alt=&quot;post2&quot;&gt;
+						&lt;div class=&quot;blog-mask&quot;&gt;
+							&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;blog-link fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt; 
+					&lt;h3&gt;Recent Blog Post Two&lt;/h3&gt;
+						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nulla augue, malesuada eget sapien ac, dictum eleifend odio. Morbi rutrum.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Blog Post 2 --&gt;
+						
+	&lt;!-- Blog Post 3 --&gt;						
+		&lt;div class=&quot;one-third column&quot;&gt;
+			&lt;div class=&quot;date&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;11&lt;/li&gt;
+                    &lt;li&gt;Jan&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+				&lt;div class=&quot;blog-view&quot;&gt;
+					&lt;img src=&quot;img/blog/blog-img.png&quot; alt=&quot;post3&quot;&gt;
+						&lt;div class=&quot;blog-mask&quot;&gt;
+							&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;blog-link fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt; 
+					&lt;h3&gt;Recent Blog Post Three&lt;/h3&gt;
+						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nulla augue, malesuada eget sapien ac, dictum eleifend odio. Morbi rutrum.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Blog Post 3 --&gt;
+	&lt;/section&gt;
+&lt;!--==================== END RECENT BLOG POST ====================--&gt;
+		</pre>	
+	To Change Placeholder Images With Yours Replace "blog-img.png" With Your Images
+	<pre class="prettyprint">
+	&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;image&quot;&gt;
+	</pre>
+	</section>	
+	
+		<div class="row"></div>
+		
+		
+	<section id="contact-form">
+		<h2>M.) Contact Form <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Contact Form Structure Looks Like Below Code
+		
+		<pre class="prettyprint">
+&lt;!-- Contact Form --&gt;
+		&lt;div class=&quot;ten columns&quot;&gt;
+			&lt;form method=&quot;post&quot; action=&quot;contact.php&quot;&gt;
+				&lt;div class=&quot;ten columns&quot;&gt;
+					&lt;input type=&quot;text&quot; class=&quot;name&quot; placeholder=&quot;Name...&quot; required=&quot;required&quot; name=&quot;Name&quot;&gt;
+				&lt;/div&gt;
+				
+				&lt;div class=&quot;ten columns&quot;&gt;
+					&lt;input type=&quot;email&quot; class=&quot;email&quot; placeholder=&quot;Email...&quot; required=&quot;required&quot; name=&quot;Email&quot;&gt;
+				&lt;/div&gt;
+				
+				&lt;div class=&quot;ten columns&quot;&gt;
+					&lt;textarea name=&quot;Message&quot; required rows=&quot;20&quot; cols=&quot;20&quot; class=&quot;message&quot; placeholder=&quot;Message...&quot;&gt;&lt;/textarea&gt;
+				&lt;/div&gt;
+
+				&lt;div class=&quot;ten columns&quot;&gt;
+					&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Send&quot; class=&quot;submit-button&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;&lt;!-- End Contact Form --&gt;
+</pre>
+				
+				<strong>To Change Admin Email Go To contact.php File Located in Download Folder</strong>
+			<pre class="prettyprint"> 
+			$EmailFrom = &quot;Your Site Name&quot;;
+			$EmailTo = &quot;Your Email&quot;;
+			$Subject = &quot;Message&quot;;
+			</pre>		
+	</section>	
+	
+		<div class="row"></div>
+				
+		
+	<section id="contact-info">
+		<h2>N.) Contact Info <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Contact Info Structure Looks Like The Code Below
+		<pre class="prettyprint"> 
+			&lt;!-- Contact Info --&gt;		
+				&lt;div class=&quot;contact-info&quot;&gt;
+					&lt;h3&gt;Isadora Doe&lt;/h3&gt;
+						&lt;p&gt;345 Folsom Avenue&lt;/p&gt;
+						&lt;p&gt;San Francisco, CA 94107 &lt;/p&gt;
+						&lt;p&gt;Phone: +123 456-789&lt;/p&gt; 
+						&lt;p&gt;isadora@doe.com&lt;/p&gt;
+				&lt;/div&gt;&lt;!-- End Contact Form --&gt;
+			</pre>	
+	</section>	
+	
+		<div class="row"></div>	
+		
+	<section id="social-links">
+		<h2>O.) Social Links <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Social Links Structure Looks Like The Code Below
+		<pre class="prettyprint"> 
+			&lt;!-- Social Icons --&gt;	
+				&lt;div class=&quot;social-icons&quot;&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-facebook fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-twitter fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-google-plus fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-pinterest fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-linkedin fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-skype fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;social-icon fa fa-rss fa-3x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;/div&gt;&lt;!-- End Social Icons --&gt;
+			</pre>	
+		
+		<strong>To Change Social Link With Yours Replace "#" With Your Custom Link.</strong>
+	</section>	
+	
+		<div class="row"></div>
+		
+	<section id="project">
+		<h2>P.) Project Popup <a href="#table-contents">Top &uarr;</a></h2>
+		Isadora's Project Popup Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!-- Project Pop Up --&gt;
+		&lt;div id=&quot;project&quot; class=&quot;single-project&quot;&gt;
+			&lt;div class=&quot;container&quot;&gt;
+				&lt;h2&gt;Single Project Title&lt;/h2&gt;
+					&lt;div class=&quot;eight columns offset-by-two&quot;&gt;
+						&lt;img src=&quot;img/projects/project-img.png&quot; alt=&quot;project1&quot;&gt;
+					&lt;/div&gt;
+							
+						&lt;div class=&quot;four columns&quot;&gt;
+							&lt;h3&gt;Project Description&lt;/h3&gt;
+								&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut eros fermentum, ultrices dolor vitae, vestibulum ante. 
+								   Quisque sit amet tempor quam, nec convallis sem. Aliquam nec diam est. Vivamus diam turpis, adipiscing et lorem.&lt;/p&gt;
+
+								&lt;h3&gt;Project Details&lt;/h3&gt;	
+									&lt;p&gt;Client: Themeforest&lt;/p&gt;
+									&lt;p&gt;Date: 10 Jan, 2013&lt;/p&gt;
+									&lt;p&gt;Tags: Web Design, Branding, Development&lt;/p&gt;
+									&lt;a href=&quot;index.html&quot;&gt;&lt;i class=&quot;website&quot;&gt;View Website&lt;/i&gt;&lt;/a&gt;
+							
+						&lt;/div&gt;
+					&lt;button class=&quot;project_close close-button&quot;&gt;&lt;i class=&quot;close-icon fa fa-times-circle fa-3x&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;	
+	&lt;!-- End Project Pop Up --&gt;
+
+		</pre>	
+		
+	
+<strong>In order to create new pop-up project copy the code above and then add the digit 1 after 'project' in the following lines:</strong>
+
+<pre class="prettyprint"> &lt;div id=&quot;project1&quot; class=&quot;single-project&quot;&gt;
+</pre>
+
+<pre class="prettyprint">&lt;button class=&quot;project1_close close-button&quot;&gt;&lt;i class=&quot;close-icon fa fa-times-circle fa-3x&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+</pre>	
+		
+		
+<strong>Open the file plugins.js and add the following code :</strong>
+
+<pre class="prettyprint">
+$(document).ready(function () {
+		$('#project1').popup({
+		transition: 'all 0.5s'
+		});
+	});
+</pre>	
+		
+<strong>Finally add the digit 1 after 'project' in the Portfolio section </strong>
+
+<pre class="prettyprint">
+&lt;!-- Project 1 --&gt;
+				
+				&lt;a class=&quot;project1_open&quot; href=&quot;project1&quot;&gt;&lt;i class=&quot;more&quot;&gt;+&lt;/i&gt;&lt;/a&gt;
+							
+					&lt;!-- End Project 1 --&gt;
+</pre>
+		
+<strong>For every other pop-up you just need to change the digit 1 with 2 etc.</strong> 		
+						
+				
+					
+			
+	</section>	
+	
+		<div class="row"></div>		
+				
+	<section id="javascript">
+		<h2>Q.) Javascript <a href="#table-contents">Top &uarr;</a></h2>
+		<p>This Theme Imports Thirteen Javascript files</p>
+		<ul>
+		<li><strong>Html5shiv.js</strong> - This Script is the Defacto Way to Enable Use of HTML5 Sectioning Elements in Legacy Internet Explorer.</li>
+		<li><strong>Jquery.easing.1.3.js</strong> - A jQuery Plugin From GSGD to Give Advanced Easing Options.</li>
+		<li><strong>Jquery.easypiechart.js</strong> - Lightweight jQuery Plugin to Render and Animate Nice Pie Charts With the HTML5 Canvas Element</li>
+		<li><strong>Jquery.flexslider.js</strong> - An Awesome, Fully Responsive jQuery Slider Plugin</li>
+		<li><strong>Jquery.mixitup.min.js</strong> - jQuery Plugin For Filtering and Sorting Html Elements</li>
+		<li><strong>Jquery.nav.js</strong> - Smooth Scrolling and Smart Navigation When User Scrolls on One-page Sites.</li>
+		<li><strong>Jquery.popupoverlay.js</strong> - Jquery Plugin for Responsive and Accessible Modal Windows and Tooltips.</li>
+		<li><strong>Jquery.v1.11.0.js</strong> - Jquery Library</li>
+		<li><strong>Jquery.validate.js</strong> - This jQuery Plugin Makes Simple Clientside Form Validation Trivial, While Offering Lots of Option for Customization.</li>
+		<li><strong>Modernizr.custom.js</strong> - Modernizr is a Small JavaScript library That Detects the Availability of Native Implementations for Next-generation Web Technologies, i.e. Features That Stem From the HTML5 and CSS3 Specifications. </li>
+		<li><strong>Plugins.js</strong> - Custom Settings </li>
+		<li><strong>Respond.min.js</strong> - A Fast & Lightweight Polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)</li>
+		<li><strong>Waypoints.min.js</strong> - Waypoints is a jQuery Plugin That Makes it Easy to Execute a Function Whenever You Scroll to an Element.</li>
+		</ul>
+	</section>
+		
+		<div class="row"></div>
+		
+	<section id="credits">
+		<h2>R.) Sources & Credits <a href="#table-contents">Top &uarr;</a></h2>
+		
+		<p>These Are The Plugins, Images and other Components That Were Used to Make This Theme:</p>
+		
+		<ul>
+		<li>Skeleton.css - <a href='http://www.getskeleton.com/'>http://www.getskeleton.com/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Photos by Daniel Zedda - <a href='http://www.flickr.com/photos/astragony/'>http://www.flickr.com/photos/astragony/</a></li>
+		<li>Jquery Waypoints - <a href='https://github.com/imakewebthings/jquery-waypoints'>https://github.com/imakewebthings/jquery-waypoints</a> | <a href='https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt'>(MIT License)</a></li>
+		<li>Respond.js - <a href='https://github.com/scottjehl/Respond'>https://github.com/scottjehl/Respond</a> | <a href='https://github.com/scottjehl/Respond/commit/0ce59f0847d7f9a243db6a81616fcf9e21f3724f'>(MIT License)</a></li>
+		<li>Modernizr - <a href='http://modernizr.com/'>http://modernizr.com/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Mixitup - <a href='http://mixitup.io/'>http://mixitup.io/</a> | <a href='http://creativecommons.org/licenses/by-nd/3.0/'>(Creative Commons License)</a></li>
+		<li>Flexslider - <a href='https://github.com/woothemes/flexslider'>https://github.com/woothemes/flexslider</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>EasyPieChart - <a href='https://github.com/rendro/easy-pie-chart'>https://github.com/rendro/easy-pie-chart</a> | <a href='https://github.com/rendro/easy-pie-chart/blob/master/LICENSE'>(MIT License)</a></li>
+		<li>Jquery.nav - <a href='https://github.com/davist11/jQuery-One-Page-Nav'>https://github.com/davist11/jQuery-One-Page-Nav</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT and GPL License)</a></li>
+		<li>Easing - <a href='http://gsgd.co.uk/sandbox/jquery/easing/'>http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+		<li>Jquery.validate - <a href='http://bassistance.de/jquery-plugins/jquery-plugin-validation/'>http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Popupoverlay - <a href='https://github.com/vast-engineering/jquery-popup-overlay'>https://github.com/vast-engineering/jquery-popup-overlay</a> | <a href='https://jquery.org/license/'>(License)</a></li>
+		<li>Html5shiv - <a href=' https://github.com/aFarkas/html5shiv'> https://github.com/aFarkas/html5shiv</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT and GPL2 License)</a></li>
+		<li>Jquery.v1.11.0 - <a href=' http://jquery.com/'> http://jquery.com/</a> | <a href='https://jquery.org/license/'>(License)</a></li>
+		</ul>
+	</section>
+				
+           
+		<footer>
+		<p>Once Again, Thank You Very Much For Purchasing This Theme!</p>
+		<span class="header-desc">Velko Georgiev</span>
+			</footer>
+	</div>	
+	
+	</body>
+</html>

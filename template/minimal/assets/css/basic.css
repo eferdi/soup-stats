@@ -1,0 +1,29 @@
+.donut-container
+{
+    float: left;
+    text-align:center;
+    width: 50%;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.donut-chart
+{
+
+    height: 300px;
+}
+
+.container-donut-posts
+{
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+

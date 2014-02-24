@@ -91,158 +91,158 @@
     }
 
 	function analyseRePoster($index, $elementDOMNode)
-        {
-            global $db;
-            global $soupID;
-            global $soupPostID_tmp;
-            global $soupRepostCounterCorrection;
-            
-            //print $element->tagName . PHP_EOL;
-            $element = qp($elementDOMNode);
-            $cssClasses = $element->attr("class");
+    {
+        global $db;
+        global $soupID;
+        global $soupPostID_tmp;
+        global $soupRepostCounterCorrection;
 
-            $cssTMP = explode(" ", $cssClasses);
-            if($cssTMP[0] == "name")
-            {
-                $soupRepostCounterCorrection++;
-            }
-            else
-            {
-                $soupReposterID = $cssTMP[2];
-                $url = $element->find("a.url")->attr("href");
-                $parsedURL = parse_url($url);
-                $host = explode(".", $parsedURL['host']);
-                $soupReposterName = $host[0];
-            
-                $db->addReposter($soupID, $soupPostID_tmp, $soupReposterID, $soupReposterName);
-            }
+        $element = qp($elementDOMNode);
+        $cssClasses = $element->attr("class");
+
+        $cssTMP = explode(" ", $cssClasses);
+        print_r($cssTMP);
+        if($cssTMP[0] == "name")
+        {
+            $soupRepostCounterCorrection++;
         }
+        else
+        {
+            $soupReposterID = $cssTMP[2];
+            $url = $element->find("a.url")->attr("href");
+            $parsedURL = parse_url($url);
+            $host = explode(".", $parsedURL['host']);
+            $soupReposterName = $host[0];
+
+            $db->addReposter($soupID, $soupPostID_tmp, $soupReposterID, $soupReposterName);
+        }
+    }
         
 	function analysePost($index, $elementDOMNode)
+    {
+        global $db;
+        global $soupID;
+        global $soupPostID_tmp;
+        global $statsPosts;
+        global $statsRePosts;
+        global $statsErrors;
+        global $soupRepostCounterCorrection;
+
+        $postOrRePost = "";
+        $string = "";
+
+        //print $element->tagName . PHP_EOL;
+        $element = qp($elementDOMNode);
+        $cssClasses = $element->attr("class");
+
+        $posterName = "";
+        $posterID = "";
+        $viaName = "";
+        $viaID = "";
+        $postRepostCounter = 0;
+
+        $postContentType = defineContentType($cssClasses);
+        $postIsReaction = isReaction($cssClasses);
+        $postIsImported = isImported($cssClasses);
+
+        if(strlen(strstr($cssClasses, "post_repost")) > 0)
         {
-            global $db;
-            global $soupID;
-            global $soupPostID_tmp;
-            global $statsPosts;
-            global $statsRePosts;
-            global $statsErrors;
-            global $soupRepostCounterCorrection;
+            $postOrRePost = "REPOST";
 
-            $postOrRePost = "";
-            $string = "";
+            // *** post ID ***
+            $postID = $element->attr("id");
+            $soupPostID_tmp = $postID;
+            $string .= "REPosted ";
+            $string .= substr($postID, 4) . " ";
 
-            //print $element->tagName . PHP_EOL;
-            $element = qp($elementDOMNode);
-            $cssClasses = $element->attr("class");
+            // *** poster name ***
+            $strangers = $element->find("span.name")->text() . " ";
+            $strangers = explode(" ", $strangers);
+            $posterName = $strangers[1];
+            $string .= "from ";
+            $string .= $posterName;
 
-            $posterName = "";
-            $posterID = "";
-            $viaName = "";
-            $viaID = "";
-            $postRepostCounter = 0;
+            // *** poster ID ***
+            $postUserSources =          $element->find("div.source span");
+            $posterCSSClasses = explode(" ", $postUserSources->attr("class"));
+            $posterID = $posterCSSClasses[2];
+            $string .= "(" . substr($posterID, 4) . ") ";
 
-            $postContentType = defineContentType($cssClasses);
-            $postIsReaction = isReaction($cssClasses);
-            $postIsImported = isImported($cssClasses);
-
-            if(strlen(strstr($cssClasses, "post_repost")) > 0)
+            // *** via ***
+            if(count($strangers) > 3)
             {
-                $postOrRePost = "REPOST";
-
-                // *** post ID ***
-                $postID = $element->attr("id");
-                $soupPostID_tmp = $postID;
-                $string .= "REPosted ";
-                $string .= substr($postID, 4) . " ";
-
-                // *** poster name ***
-                $strangers = $element->find("span.name")->text() . " ";
-                $strangers = explode(" ", $strangers);
-                $posterName = $strangers[1];
-                $string .= "from ";
-                $string .= $posterName;
-
-                // *** poster ID ***
-                $postUserSources =          $element->find("div.source span");
-                $posterCSSClasses = explode(" ", $postUserSources->attr("class"));
-                $posterID = $posterCSSClasses[2];
-                $string .= "(" . substr($posterID, 4) . ") ";
-
-                // *** via ***
-                if(count($strangers) > 3)
-                {
-                    $viaCSSClasses = explode(" ", $postUserSources->next()->attr("class"));
-                    $viaID = $viaCSSClasses[2];
-                    $viaName = $strangers[2];
-                    $string .= "via " . $viaName;
-                    $string .= "(" . substr($viaID, 4) . ") ";
-                }
+                $viaCSSClasses = explode(" ", $postUserSources->next()->attr("class"));
+                $viaID = $viaCSSClasses[2];
+                $viaName = $strangers[2];
+                $string .= "via " . $viaName;
+                $string .= "(" . substr($viaID, 4) . ") ";
             }
-            else
-            {
-                $postOrRePost = "POST";
-                // *** post id ***
-                $postID = $element->attr("id");
-                $string .= "Posted ";
-                $string .= substr($postID, 4) . " ";
-            }
-
-            // *** TIME ***
-            $string .= "on ";
-            $dateString = $element->find("span.time abbr")->attr("title");
-            date_default_timezone_set('UTC');
-            $timestamp = strtotime($dateString);
-            $postDate = date("Y-m-d", $timestamp);
-            $postTime = date("H:m:s", $timestamp);
-            $string .= $postDate . " " . $postTime . " ";
-
-            // *** repost counter ***
-            $postReposts = $element->find("div.reposted_by span");
-            $postRepostCounter = count($postReposts);
-            if($postRepostCounter == 1)
-            {
-                $string .= "and was reposted by one person ";
-            }
-            elseif($postRepostCounter > 1)
-            {
-                $string .= "and was reposted " . $postRepostCounter . " times ";
-            }
-            
-            $postReposter = $postReposts->each("analyseRePoster");
-
-            echo $string ."\n";
-
-            // *** fill db arrays ***
-            switch($postOrRePost)
-            {
-                case "POST":
-                    $post =& $statsPosts;
-                    break;
-                case "REPOST":
-                    $post =& $statsRePosts;
-                    break;
-                default:
-                    $post =& $statsErrors;
-                    break;
-            }
-
-            $post[$postID] = array( ":cuserid"      => $soupID,
-                                    ":cpost"         => $postID,
-                                    ":cfromsoupname" => $posterName,
-                                    ":cfromsoupid"   => $posterID,
-                                    ":cviasoupname"  => $viaName,
-                                    ":cviasoupid"    => $viaID,
-                                    ":crepostcounter" => $postRepostCounter - $soupRepostCounterCorrection,
-                                    ":cdate"         => $postDate,
-                                    ":ctime"         => $postTime,
-                                    ":cposttype"     => $postOrRePost,
-                                    ":ccontenttype"  => $postContentType,
-                                    ":creaction"     => $postIsReaction,
-                                    ":cimported"     => $postIsImported
-                                );
-            
-            $soupRepostCounterCorrection = 0;
         }
+        else
+        {
+            $postOrRePost = "POST";
+            // *** post id ***
+            $postID = $element->attr("id");
+            $string .= "Posted ";
+            $string .= substr($postID, 4) . " ";
+        }
+
+        // *** TIME ***
+        $string .= "on ";
+        $dateString = $element->find("span.time abbr")->attr("title");
+        date_default_timezone_set('UTC');
+        $timestamp = strtotime($dateString);
+        $postDate = date("Y-m-d", $timestamp);
+        $postTime = date("H:m:s", $timestamp);
+        $string .= $postDate . " " . $postTime . " ";
+
+        // *** repost counter ***
+        $postReposts = $element->find("div.reposted_by span");
+        $postRepostCounter = count($postReposts);
+        if($postRepostCounter == 1)
+        {
+            $string .= "and was reposted by one person ";
+        }
+        elseif($postRepostCounter > 1)
+        {
+            $string .= "and was reposted " . $postRepostCounter . " times ";
+        }
+
+        $postReposter = $postReposts->each("analyseRePoster");
+
+        echo $string ."\n";
+
+        // *** fill db arrays ***
+        switch($postOrRePost)
+        {
+            case "POST":
+                $post =& $statsPosts;
+                break;
+            case "REPOST":
+                $post =& $statsRePosts;
+                break;
+            default:
+                $post =& $statsErrors;
+                break;
+        }
+
+        $post[$postID] = array( ":cuserid"      => $soupID,
+                                ":cpost"         => $postID,
+                                ":cfromsoupname" => $posterName,
+                                ":cfromsoupid"   => $posterID,
+                                ":cviasoupname"  => $viaName,
+                                ":cviasoupid"    => $viaID,
+                                ":crepostcounter" => $postRepostCounter - $soupRepostCounterCorrection,
+                                ":cdate"         => $postDate,
+                                ":ctime"         => $postTime,
+                                ":cposttype"     => $postOrRePost,
+                                ":ccontenttype"  => $postContentType,
+                                ":creaction"     => $postIsReaction,
+                                ":cimported"     => $postIsImported
+                            );
+
+        $soupRepostCounterCorrection = 0;
+    }
 
 
 	while($next != $loopStop)
@@ -277,9 +277,9 @@
         // Iterate using a callback function
 		$posts = $html->find("div.post")->each('analysePost');
 
-        //break;
+        break;
 	}
-
+/*/
     foreach($statsPosts as $statsPost)
     {
         if(!$db->insertPost($statsPost))
@@ -295,7 +295,7 @@
            break;
         }
     }
-
+//*/
 	$timeEnd = microtime(true);
 	$runtime = $timeEnd - $timeStart;
 	echo "runtime " . $runtime;

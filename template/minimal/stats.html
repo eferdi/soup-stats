@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>{$soupName}'s soup.io stats</title>
+    <meta name="description" content="Your time is limited, so don’t waste it living someone else’s life." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="assets/css/basic.css">
+
+    <link rel="alternate" type="application/rss+xml" title="Minimal Theme" href="/rss/">
+    <link rel="canonical" href="http://minimalv2-ghost1235.rhcloud.com/" />
+</head>
+<body style="background-image:url('template/minimal/assets/images/bg.jpg');" >
+    <header id="site-head">
+        <div class="vertical">
+            <div id="site-head-content" class="inner">
+                <h1 class="blog-title">Your soup.io stats</h1>
+                <h2 class="blog-description">let us tell you something about your soup</h2>
+            </div>
+        </div>
+    </header>
+<br/>
+<main class="content" role="main">
+    <article class="post tag-getting-started">
+        <img class='img-left' src="assets/images/useravatar.jpg" alt='authorimage'>
+        <br/>
+        <header class="post-header">
+            <h2 class="post-title">posts overall</h2>
+            <br/>
+            <div class="date-box">
+                 <span class="date-outer">
+                 <span class="date-inner">lasst updated <time datetime="2014-01-15">15 Jan 2014</time></span>
+                 </span>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <br>
+            <div id="donuts-overall" class="container-donut-posts">
+                <div class="donut-container clearfix">
+                    <h3 class="donut-headline">by type</h3>
+                    <div id="donut-posts-by-type" class="donut-chart"></div>
+                </div>
+                <div class="donut-container clearfix">
+                    <h3 class="donut-headline">by content type</h3>
+                    <div id="donut-posts-by-contenttype" class="donut-chart"></div>
+                </div>
+            </div>
+        </section>
+        <span class="post-meta"> on article</span>
+    </article>
+
+    <br/>
+
+    <article class="post tag-article">
+        <img class='img-left' src="assets/images/useravatar.jpg" alt='authorimage'>
+        <br/>
+        <header class="post-header">
+           <h2 class="post-title"><a href="post.html">content by post type</a></h2>
+           <br/>
+           <div class="date-box">
+                 <span class="date-outer">
+                 <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
+                 </span>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <br>
+            <div id="donuts-by-type" class="container-donut-posts">
+                <div class="donut-container">
+                    <h3 class="donut-headline">post content</h3>
+                    <div id="donut-content-by-posttype-post" class="donut-chart"></div>
+                </div>
+                <div class="donut-container">
+                    <h3 class="donut-headline">repost content</h3>
+                    <div id="donut-content-by-posttype-repost" class="donut-chart"></div>
+                </div>
+            </div>
+        </section>
+        <span class="post-meta"> on article</span>
+    </article>
+
+    <br/>
+
+    <article class="post tag-image">
+        <img src="assets/images/useravatar.jpg" class='img-left' alt='authorimage'>
+        <br/>
+        <header class="post-header">
+            <h2 class="post-title"><a href="post.html">Toplists</a></h2>
+            <br/>
+            <div class="date-box">
+                <span class="date-outer">
+                    <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
+                </span>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <br>
+            <div class="toplist-container">
+                <h3 class="toplist-headline">your top posts</h3>
+                <div id="toplist-posts" class="toplist"></div>
+            </div>
+            <div class="toplist-container">
+                <h3 class="toplist-headline">top reposter</h3>
+                <div id="toplist-reposter" class="toplist"></div>
+            </div>
+            <div class="toplist-container">
+                <h3 class="toplist-headline">your favorit soup users</h3>
+                <div id="toplist-fav-users" class="toplist"></div>
+            </div>
+        </section>
+        <span class="post-meta"> on Image</span>
+    </article>
+
+    <br/>
+
+    <article class="post tag-image">
+        <img src="assets/images/useravatar.jpg" class='img-left' alt='authorimage'>
+        <br/>
+        <header class="post-header">
+            <h2 class="post-title"><a href="post.html">your activities</a></h2>
+            <br/>
+            <div class="date-box">
+                <span class="date-outer">
+                    <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
+                </span>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <br>
+            <h3 class="activity-headline">last 7 days</h3>
+            <div id="activity-last-7-days" class="activity-chart"></div>
+
+            <h3 class="activity-headline">last 3 months</h3>
+            <div id="activity-last-3-months" class="activity-chart"></div>
+
+            <h3 class="activity-headline">this year</h3>
+            <div id="activity-this-year" class="activity-chart"></div>
+
+            <h3 class="activity-headline">last year</h3>
+            <div id="activity-last-year" class="activity-chart"></div>
+        </section>
+        <span class="post-meta"> on Image</span>
+    </article>
+    <br/>
+</main>
+
+<footer class="site-footer">
+<div class="pagelist">
+<a href="Contact.html">Contact</a> /
+<a href="#">Policy</a> /
+<a href="#">Terms</a>
+</div>
+<div class="inner">
+<section class="copyright">All content copyright <a href="/">Minimal Theme</a> &copy; 2013 &bull; All rights reserved.</section>
+
+</div>
+</footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/index.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Target your .container, .wrapper, .post, etc.
+            $(".content").fitVids();
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            // Target your .container, .wrapper, .post, etc.
+            $(".content").fitVids();
+        });
+    </script>
+    <script src="assets/js/pace.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+
+    <script type="text/javascript">
+        var postCount = {$postCount};
+        var repostCount = {$repostCount};
+
+        Morris.Donut({
+            resize: true,
+            element: 'donut-posts-by-type',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
+            data: [
+                {label: "posts", value: postCount},
+                {label: "reposts", value: repostCount}
+            ]
+        });
+
+        var allPostTypeRegularCount =  {$postTypeRegularCount} + {$repostTypeRegularCount};
+        var allPostTypeLinkCount =     {$postTypeLinkCount} + {$repostTypeLinkCount};
+        var allPostTypeQuoteCount =    {$postTypeQuoteCount} + {$repostTypeQuoteCount};
+        var allPostTypeImageCount =    {$postTypeImageCount} + {$repostTypeImageCount};
+        var allPostTypeVideoCount =    {$postTypeVideoCount} + {$repostTypeVideoCount};
+        var allPostTypeFileCount =     {$postTypeFileCount} + {$repostTypeFileCount};
+        var allPostTypeReviewCount =   {$postTypeReviewCount} + {$repostTypeReviewCount};
+        var allPostTypeEventCount =    {$postTypeEventCount} + {$repostTypeEventCount};
+
+        Morris.Donut({
+            resize: true,
+            element: 'donut-posts-by-contenttype',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
+            data: [
+                {label: "texts",    value: allPostTypeRegularCount},
+                {label: "images",   value: allPostTypeImageCount},
+                {label: "links",    value: allPostTypeLinkCount},
+                {label: "quotes",   value: allPostTypeQuoteCount},
+                {label: "videos",   value: allPostTypeVideoCount},
+                {label: "files",    value: allPostTypeFileCount},
+                {label: "reviews",  value: allPostTypeReviewCount},
+                {label: "events",   value: allPostTypeEventCount}
+            ]
+        });
+
+        var postCount = {$postCount};
+        var repostCount = {$repostCount};
+
+        Morris.Donut({
+            resize: true,
+            element: 'donut-content-by-posttype-post',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
+            data: [
+                {label: "texts",    value: {$postTypeRegularCount}},
+                {label: "images",   value: {$postTypeImageCount}},
+                {label: "links",    value: {$postTypeLinkCount}},
+                {label: "quotes",   value: {$postTypeQuoteCount}},
+                {label: "videos",   value: {$postTypeVideoCount}},
+                {label: "files",    value: {$postTypeFileCount}},
+                {label: "reviews",  value: {$postTypeReviewCount}},
+                {label: "events",   value: {$postTypeEventCount}}
+            ]
+        });
+
+        Morris.Donut({
+            element: 'donut-content-by-posttype-repost',
+            colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
+            data: [
+                {label: "texts",    value: {$repostTypeRegularCount}},
+                {label: "images",   value: {$repostTypeImageCount}},
+                {label: "links",    value: {$repostTypeLinkCount}},
+                {label: "quotes",   value: {$repostTypeQuoteCount}},
+                {label: "videos",   value: {$repostTypeVideoCount}},
+                {label: "files",    value: {$repostTypeFileCount}},
+                {label: "reviews",  value: {$repostTypeReviewCount}},
+                {label: "events",   value: {$repostTypeEventCount}}
+            ]
+        });
+    </script>
+</body>
+</html>
