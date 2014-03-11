@@ -21,7 +21,10 @@ v0.5
 v0.9
 - get a live version for this tool
 - bigges problem will be the crawler, he needs some time and have to run in background. Maybe we use some background processing like gearman (http://http://gearman.org/)
+- when updateing a previes crawled soup, dont forget tu user the type parameter (http://kitchen.soup.io/?type=quote), this is server friendly
 - ~~multi user support (register, login, delete...)~~ **[CANCELED]** no user registration necessary, because only public data will be crawled
+- faq
+- news blog, maybee the new ghost blog software...
 
 v1
 - tested version of all above
