@@ -50,9 +50,9 @@ class soupStatsDB extends databaseConnection
         return parent::execute();
     }
     
-    public function getPosts($soupID)
+    public function getTopPosts($soupID)
     {
-        $sql = "select cposttype, sum(ccounthelp) as cpostCount from tstatsposts where cuserid = :soupid group by cposttype";
+        $sql = "select cpost, crepostcounter from tstatsposts where cuserid = :soupid and cposttype = 'POST' order by crepostcounter DESC limit 0,10";
 
         $paramValues = array(":soupid"	=> $soupID);
 
@@ -63,7 +63,7 @@ class soupStatsDB extends databaseConnection
     
     public function getTopFavs($soupID)
     {
-        $sql = "select cposttype, sum(ccounthelp) as cpostCount from tstatsposts where cuserid = :soupid group by cposttype";
+        $sql = "select cfromsoupid, cfromsoupname, sum(ccounthelp) as ccount from tstatsposts where cuserid = :soupid and cposttype = 'REPOST' group by cfromsoupid order by ccount DESC limit 0,10";
 
         $paramValues = array(":soupid"	=> $soupID);
 
@@ -74,7 +74,7 @@ class soupStatsDB extends databaseConnection
     
     public function getTopReposter($soupID)
     {
-        $sql = "select cposttype, sum(ccounthelp) as cpostCount from tstatsposts where cuserid = :soupid group by cposttype";
+        $sql = "select creposterid, crepostername, sum(ccounthelp) as cpostcount from tstatsreposts where csoupid = :soupid group by creposterid order by cpostcount desc limit 0,10";
 
         $paramValues = array(":soupid"	=> $soupID);
 

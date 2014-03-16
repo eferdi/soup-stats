@@ -31,7 +31,7 @@
 <br/>
 <main class="content" role="main">
     <article class="post tag-getting-started">
-        <img class='img-left' src="assets/images/useravatar.jpg" alt='authorimage'>
+        <img class='img-left' src="{$user.cavatar}#" alt='authorimage'>
         <br/>
         <header class="post-header">
             <h2 class="post-title">posts overall</h2>
@@ -55,13 +55,13 @@
                 </div>
             </div>
         </section>
-        <span class="post-meta"> on article</span>
+        <!--span class="post-meta"> on article</span-->
     </article>
 
     <br/>
 
     <article class="post tag-article">
-        <img class='img-left' src="assets/images/useravatar.jpg" alt='authorimage'>
+        <img class='img-left' src="{$user.cavatar}#" alt='authorimage'>
         <br/>
         <header class="post-header">
            <h2 class="post-title"><a href="post.html">content by post type</a></h2>
@@ -85,13 +85,13 @@
                 </div>
             </div>
         </section>
-        <span class="post-meta"> on article</span>
+        <!--span class="post-meta"> on article</span-->
     </article>
 
     <br/>
 
     <article class="post tag-image">
-        <img src="assets/images/useravatar.jpg" class='img-left' alt='authorimage'>
+        <img src="{$user.cavatar}#" class='img-left' alt='authorimage'>
         <br/>
         <header class="post-header">
             <h2 class="post-title"><a href="post.html">Toplists</a></h2>
@@ -106,24 +106,69 @@
             <br>
             <div class="toplist-container">
                 <h3 class="toplist-headline">your top posts</h3>
-                <div id="toplist-posts" class="toplist"></div>
+                <div id="toplist-posts" class="toplist">
+                    <table>
+                        <tr>
+                            <th>top</th>
+                            <th>reposts</th>
+                            <th>post</th>
+                        </tr>
+                        {loop="topPosts"}
+                        <tr>
+                            <td>{$counter+1}</td>
+                            <td>{$value.crepostcounter}</td>
+                            <td><a href="http://{$soupName}.soup.io/post/{$value.cpost|substr:4}">{$value.cpost}</a></td>
+                        </tr>
+                        {/loop}
+                    </table>
+                </div>
             </div>
             <div class="toplist-container">
                 <h3 class="toplist-headline">top reposter</h3>
-                <div id="toplist-reposter" class="toplist"></div>
+                <div id="toplist-reposter" class="toplist">
+                    <table>
+                        <tr>
+                            <th>top</th>
+                            <th>reposts</th>
+                            <th>user</th>
+                        </tr>
+                        {loop="topReposter"}
+                        <tr>
+                            <td>{$counter+1}</td>
+                            <td>{$value.cpostcount}</td>
+                            <td><a href="http://{$value.crepostername}.soup.io">{$value.crepostername}</a></td>
+                        </tr>
+                        {/loop}
+                    </table>
+                </div>
             </div>
             <div class="toplist-container">
                 <h3 class="toplist-headline">your favorit soup users</h3>
-                <div id="toplist-fav-users" class="toplist"></div>
+                <div id="toplist-fav-users" class="toplist">
+                    <table>
+                        <tr>
+                            <th>top</th>
+                            <th>reposted</th>
+                            <th>user</th>
+                        </tr>
+                        {loop="topFavs"}
+                        <tr>
+                            <td>{$counter+1}</td>
+                            <td>{$value.ccount}</td>
+                            <td><a href="http://{$value.cfromsoupname}.soup.io">{$value.cfromsoupname}</a></td>
+                        </tr>
+                        {/loop}
+                    </table>
+                </div>
             </div>
         </section>
-        <span class="post-meta"> on Image</span>
+        <!--span class="post-meta"> on article</span-->
     </article>
 
     <br/>
 
     <article class="post tag-image">
-        <img src="assets/images/useravatar.jpg" class='img-left' alt='authorimage'>
+        <img src="{$user.cavatar}#" class='img-left' alt='authorimage'>
         <br/>
         <header class="post-header">
             <h2 class="post-title"><a href="post.html">your activities</a></h2>
@@ -148,7 +193,7 @@
             <h3 class="activity-headline">last year</h3>
             <div id="activity-last-year" class="activity-chart"></div>
         </section>
-        <span class="post-meta"> on Image</span>
+        <!--span class="post-meta"> on article</span-->
     </article>
     <br/>
 </main>
@@ -196,7 +241,8 @@
             colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
             data: [
                 {label: "posts", value: postCount},
-                {label: "reposts", value: repostCount}
+                {label: "reposts", value: repostCount},
+                {label: "total", value: (postCount + repostCount)}
             ]
         });
 

@@ -12,11 +12,12 @@
     $postsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid'], "post");
     $repostsByContentType = $db->getPostsByUserGroupedContentType($user[0]['csoupid'], "repost");
     
-    $topPosts = $db->getPosts($user[0]['csoupid']);
-    $topFavs = $db->getTopFavs($user[0]['csoupid']);
+    $topPosts = $db->getTopPosts($user[0]['csoupid']);
     $topReposter = $db->getTopReposter($user[0]['csoupid']);
+    $topFavs = $db->getTopFavs($user[0]['csoupid']);
 
     $tpl = new raintpl(); //include Rain TPL
+    $tpl->assign("user", $user[0]);
     $tpl->assign("soupName",  $user[0]['cusername']); // assign an array
 
     $tpl->assign("postCount", $postsByType[0]['cpostCount']); // assign variable
@@ -110,6 +111,10 @@
                 break;
         }
     }
+
+    $tpl->assign("topPosts", $topPosts);
+    $tpl->assign("topReposter", $topReposter);
+    $tpl->assign("topFavs", $topFavs);
 
     $tpl->draw( "stats" ); // draw the template
 ?>

@@ -3,21 +3,38 @@ require_once("db.class.php");
 
 class soupDB extends databaseConnection
 {
-    public function addUser($soupID, $username)
+    public function addUser($soupID, $username, $soupAvatarUrl)
     {
         $result = $this->findUser($soupID);
 
         if(!$result)
         {
-            $sql = "insert into tusers (csoupid, cusername) values (:soupid, :username)";
+            $sql = "insert into tusers (csoupid, cusername, cavatar) values (:soupid, :username, :avatar)";
 
             $paramValues = array(   ":username" => $username,
-                                    ":soupid"   => $soupID
+                                    ":soupid"   => $soupID,
+                                    ":avatar"   => $soupAvatarUrl
                                 );
 
             parent::prepareSQL($sql, "write");
             parent::bindParam($paramValues);
             return parent::execute();
+        }
+        else
+        {
+            if($result[0]['cavatar'] != $soupAvatarUrl)
+            {
+
+                $sql = "update tusers set cavatar = :avatar where csoupid = :soupid";
+
+                $paramValues = array(   ":soupid"   => $soupID,
+                                        ":avatar"   => $soupAvatarUrl
+                                    );
+
+                parent::prepareSQL($sql, "write");
+                parent::bindParam($paramValues);
+                return parent::execute();
+            }
         }
 
         return $result;

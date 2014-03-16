@@ -7,10 +7,12 @@
 // RSS IMPORTS: ... <TYPE> imported ...
 // REACTIONS: ... <TYPE> post_reaction ...
 
+    error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+
 	require("../vendor/autoload.php");
 	require("db_soup.class.php");
 
-	$mainUrl = "http://manni.soup.io";
+	$mainUrl = "http://psaiko.soup.io";
 	$loopStop = $mainUrl;
 	$url = $mainUrl;
 	$next = null;
@@ -183,6 +185,7 @@
             $postOrRePost = "POST";
             // *** post id ***
             $postID = $element->attr("id");
+            $soupPostID_tmp = $postID;
             $string .= "Posted ";
             $string .= substr($postID, 4) . " ";
         }
@@ -269,17 +272,17 @@
             $username = $host[0];
 
             $userInformationTMP = explode(" ", $html->find("div.vcard a img")->attr("class"));
+            $userAvatarUrl = $html->find("div.vcard a img")->attr("src");
             $soupID = $userInformationTMP[2];
 
-            $db->addUser($soupID, $username);
+            $db->addUser($soupID, $username, $userAvatarUrl);
         }
 
         // Iterate using a callback function
 		$posts = $html->find("div.post")->each('analysePost');
-
-        break;
+        //break;
 	}
-/*/
+//*/
     foreach($statsPosts as $statsPost)
     {
         if(!$db->insertPost($statsPost))
