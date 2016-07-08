@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+    <link href="../default/basic.css" rel="stylesheet" type="text/css"/>
+    <title>soupstats.io - Your soup.io stats</title>
+</head>
+<body>
+    <div id="home-start" class="container-home">
+        <h2 class="home-categorie categorie">It's as simple as soup.io</h2>
+        
+        <div class="home-container">
+            <h3 class="home-headline">simply enter your soupname here and press GO</h3>
+            <form name="input-soup-name" method="post" action="stats.php">
+                http://<input type="text" name="soup" class="text-soupname"/>soup.io
+                <input type="submit" id="button-submit" style="position: absolute; left: -9999px"/>
+                <input type="button" name="go" class="button-go" value="GO!" title="go">
+            </form>
+        </div>
+    </div>
+    
+    <br/>
+    
+    <!--div id="donuts-by-type" class="container-donut-posts">
+        <h2 class="donut-categorie categorie">content by post type ...</h2>
+        
+        <div class="donut-container">
+            <h3 class="donut-headline">... post</h3>
+            <div id="donut-content-by-posttype-post" class="donut-chart"></div>
+        </div>
+        <div class="donut-container">
+            <h3 class="donut-headline">... repost</h3> 
+            <div id="donut-content-by-posttype-repost" class="donut-chart"></div>
+        </div>
+    </div>
+    
+    <br/>
+    
+    <div>
+        <h2 class="toplists-categorie categorie">toplists</h2>
+        
+        <div class="toplist-container">
+            <h3 class="toplist-headline">your top posts</h3>
+            <div id="toplist-posts" class="toplist"></div>
+        </div>
+        <div class="toplist-container">
+            <h3 class="toplist-headline">top reposter</h3>
+            <div id="toplist-reposter" class="toplist"></div>
+        </div>
+        <div class="toplist-container">
+            <h3 class="toplist-headline">your favorit soup users</h3>
+            <div id="toplist-fav-users" class="toplist"></div>
+        </div>
+    </div>
+
+    <br/>
+
+    <div>
+        <h2 class="activity-categorie categorie">your activities in ...</h2>
+        <h3 class="activity-headline">... the last 7 days</h3>
+        <div id="activity-last-7-days" class="activity-chart"></div>
+
+        <h3 class="activity-headline">... the last 3 months</h3>
+        <div id="activity-last-3-months" class="activity-chart"></div>
+
+        <h3 class="activity-headline">... this year</h3>
+        <div id="activity-this-year" class="activity-chart"></div>
+
+        <h3 class="activity-headline">... the last year</h3>
+        <div id="activity-last-year" class="activity-chart"></div>
+    </div-->
+</body>
+</html>

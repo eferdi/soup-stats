@@ -7,13 +7,17 @@ class soupDB extends databaseConnection
     {
         $result = $this->findUser($soupID);
 
+        date_default_timezone_set('UTC');
+        $lastcrawl = date("Y-m-d H:i:s");
+
         if(!$result)
         {
-            $sql = "insert into tusers (csoupid, cusername, cavatar) values (:soupid, :username, :avatar)";
+            $sql = "insert into tusers (csoupid, cusername, cavatar, clastcrawl) values (:soupid, :username, :avatar, :lastcrawl)";
 
             $paramValues = array(   ":username" => $username,
                                     ":soupid"   => $soupID,
-                                    ":avatar"   => $soupAvatarUrl
+                                    ":avatar"   => $soupAvatarUrl,
+                                    ":lastcrawl"     => $lastcrawl
                                 );
 
             parent::prepareSQL($sql, "write");
@@ -25,10 +29,11 @@ class soupDB extends databaseConnection
             if($result[0]['cavatar'] != $soupAvatarUrl)
             {
 
-                $sql = "update tusers set cavatar = :avatar where csoupid = :soupid";
+                $sql = "update tusers set cavatar = :avatar, clastcrawl = :lastcrawl where csoupid = :soupid";
 
                 $paramValues = array(   ":soupid"   => $soupID,
-                                        ":avatar"   => $soupAvatarUrl
+                                        ":avatar"   => $soupAvatarUrl,
+                                        ":lastcrawl"     => $lastcrawl
                                     );
 
                 parent::prepareSQL($sql, "write");
@@ -55,7 +60,18 @@ class soupDB extends databaseConnection
 
     public function insertPost($post)
     {
-        $sql = "insert into tstatsposts (cuserid, cpost, cfromsoupname, cfromsoupid, cviasoupname, cviasoupid, crepostcounter, cdate, ctime, cposttype, ccontenttype, creaction, cimported) values (:cuserid, :cpost, :cfromsoupname, :cfromsoupid, :cviasoupname, :cviasoupid, :crepostcounter, :cdate, :ctime, :cposttype, :ccontenttype, :creaction, :cimported)";
+        $sql =
+            "insert into tstatsposts ".
+                "(cuserid, cpost, cfromsoupname, cfromsoupid, cviasoupname, ".
+                "cviasoupid, crepostcounter, cdate, ctime, cposttype, ".
+                "ccontenttype, creaction, cimported) ".
+                "values (:cuserid, :cpost, :cfromsoupname, :cfromsoupid, :cviasoupname, ".
+                ":cviasoupid, :crepostcounter, :cdate, :ctime, :cposttype, ".
+                ":ccontenttype, :creaction, :cimported)".
+                "ON DUPLICATE KEY UPDATE ".
+                "cuserid=VALUES(cuserid), cpost=VALUES(cpost), cfromsoupname=VALUES(cfromsoupname), cfromsoupid=VALUES(cfromsoupid), cviasoupname=VALUES(cviasoupname), ".
+                "cviasoupid=VALUES(cviasoupid), crepostcounter=VALUES(crepostcounter), cdate=VALUES(cdate), ctime=VALUES(ctime), cposttype=VALUES(cposttype), ".
+                "ccontenttype=VALUES(ccontenttype), creaction=VALUES(creaction), cimported=VALUES(cimported)";
 
         parent::prepareSQL($sql, "write");
         parent::bindParam($post);
@@ -110,6 +126,37 @@ class soupDB extends databaseConnection
         }
 
         return $result;
+    }
+
+    public function updateSince($soupID, $since)
+    {
+        $sql = "update tusers set clastsince = :since where csoupid = :soupid";
+
+        $paramValues = array( ":since"	=> $since,
+                              ":soupid" => $soupID
+        );
+
+        parent::prepareSQL($sql, "write");
+        parent::bindParam($paramValues);
+        return parent::execute();
+    }
+
+    public function getLastCrawlPosition($soupID)
+    {
+        $sql = "select * from tusers where csoupid = :soupid";
+
+        $paramValues = array( ":soupid"	=> $soupID );
+
+        parent::prepareSQL($sql, "read");
+        parent::bindParam($paramValues);
+        $result = parent::execute();
+
+        if(count($result) > 0 && $result[0]['clastsince'] != null && $result[0]['clastsince'] > 0)
+        {
+            return $result[0]['clastsince'];
+        }
+
+        return false;
     }
 }
 ?>

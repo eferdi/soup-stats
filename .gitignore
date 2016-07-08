@@ -35,7 +35,7 @@ compass_app_log.txt
 # Logs and databases #
 ######################
 *.log
-*.sql
+#*.sql
 *.sqlite
 
 # OS generated files #
@@ -47,3 +47,8 @@ compass_app_log.txt
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# db.configs
+#############
+#crawler/db.config.php
+#class/db.config.php

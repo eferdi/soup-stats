@@ -1,22 +1,22 @@
-<!DOCTYPE html>
+<?php if(!class_exists('raintpl')){exit;}?><!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>{$soupName}'s soup.io stats</title>
+    <title><?php echo $soupName;?>'s soup.io stats</title>
     <meta name="description" content="Your time is limited, so don’t waste it living someone else’s life." />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="template/minimal/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="template/minimal/assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
-    <link rel="stylesheet" type="text/css" href="assets/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="template/minimal/assets/css/basic.css">
 
-    <link rel="alternate" type="application/rss+xml" title="Minimal Theme" href="/rss/">
+    <link rel="alternate" type="application/rss+xml" title="Minimal Theme" href="template/minimal//rss/">
     <link rel="canonical" href="http://minimalv2-ghost1235.rhcloud.com/" />
 </head>
 <body style="background-image:url('template/minimal/assets/images/bg.jpg');" >
@@ -31,14 +31,14 @@
 <br/>
 <main class="content" role="main">
     <article class="post tag-getting-started">
-        <img class='img-left' src="{$user.cavatar}#" alt='authorimage'>
+        <img class='img-left' src="<?php echo $user["cavatar"];?>" alt='authorimage'>
         <br/>
         <header class="post-header">
             <h2 class="post-title">posts overall</h2>
             <br/>
             <div class="date-box">
                  <span class="date-outer">
-                 <span class="date-inner">lasst updated <time datetime="{$user.clastcrawl}">{$user.clastcrawl}</time></span>
+                 <span class="date-inner">lasst updated <time datetime="2014-01-15">15 Jan 2014</time></span>
                  </span>
             </div>
         </header>
@@ -61,14 +61,14 @@
     <br/>
 
     <article class="post tag-article">
-        <img class='img-left' src="{$user.cavatar}#" alt='authorimage'>
+        <img class='img-left' src="<?php echo $user["cavatar"];?>" alt='authorimage'>
         <br/>
         <header class="post-header">
            <h2 class="post-title"><a href="post.html">content by post type</a></h2>
            <br/>
            <div class="date-box">
                  <span class="date-outer">
-                 <span class="date-inner">lasst updated <time datetime="{$user.clastcrawl}">{$user.clastcrawl}</time></span>
+                 <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
                  </span>
             </div>
         </header>
@@ -91,14 +91,14 @@
     <br/>
 
     <article class="post tag-image">
-        <img src="{$user.cavatar}#" class='img-left' alt='authorimage'>
+        <img src="<?php echo $user["cavatar"];?>" class='img-left' alt='authorimage'>
         <br/>
         <header class="post-header">
             <h2 class="post-title"><a href="post.html">Toplists</a></h2>
             <br/>
             <div class="date-box">
                 <span class="date-outer">
-                    <span class="date-inner">lasst updated <time datetime="{$user.clastcrawl}">{$user.clastcrawl}</time></span>
+                    <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
                 </span>
             </div>
         </header>
@@ -113,13 +113,13 @@
                             <th>reposts</th>
                             <th>post</th>
                         </tr>
-                        {loop="topPosts"}
+                        <?php $counter1=-1; if( isset($topPosts) && is_array($topPosts) && sizeof($topPosts) ) foreach( $topPosts as $key1 => $value1 ){ $counter1++; ?>
                         <tr>
-                            <td>{$counter+1}</td>
-                            <td>{$value.crepostcounter}</td>
-                            <td><a href="http://{$soupName}.soup.io/post/{$value.cpost|substr:4}">{$value.cpost}</a></td>
+                            <td><?php echo $counter1+1;?></td>
+                            <td><?php echo $value1["crepostcounter"];?></td>
+                            <td><a href="http://<?php echo $soupName;?>.soup.io/post/<?php echo ( substr( $value1["cpost"], 4 ) );?>"><?php echo $value1["cpost"];?></a></td>
                         </tr>
-                        {/loop}
+                        <?php } ?>
                     </table>
                 </div>
             </div>
@@ -132,13 +132,13 @@
                             <th>reposts</th>
                             <th>user</th>
                         </tr>
-                        {loop="topReposter"}
+                        <?php $counter1=-1; if( isset($topReposter) && is_array($topReposter) && sizeof($topReposter) ) foreach( $topReposter as $key1 => $value1 ){ $counter1++; ?>
                         <tr>
-                            <td>{$counter+1}</td>
-                            <td>{$value.cpostcount}</td>
-                            <td><a href="http://{$value.crepostername}.soup.io">{$value.crepostername}</a></td>
+                            <td><?php echo $counter1+1;?></td>
+                            <td><?php echo $value1["cpostcount"];?></td>
+                            <td><a href="http://<?php echo $value1["crepostername"];?>.soup.io"><?php echo $value1["crepostername"];?></a></td>
                         </tr>
-                        {/loop}
+                        <?php } ?>
                     </table>
                 </div>
             </div>
@@ -151,13 +151,13 @@
                             <th>reposted</th>
                             <th>user</th>
                         </tr>
-                        {loop="topFavs"}
+                        <?php $counter1=-1; if( isset($topFavs) && is_array($topFavs) && sizeof($topFavs) ) foreach( $topFavs as $key1 => $value1 ){ $counter1++; ?>
                         <tr>
-                            <td>{$counter+1}</td>
-                            <td>{$value.ccount}</td>
-                            <td><a href="http://{$value.cfromsoupname}.soup.io">{$value.cfromsoupname}</a></td>
+                            <td><?php echo $counter1+1;?></td>
+                            <td><?php echo $value1["ccount"];?></td>
+                            <td><a href="http://<?php echo $value1["cfromsoupname"];?>.soup.io"><?php echo $value1["cfromsoupname"];?></a></td>
                         </tr>
-                        {/loop}
+                        <?php } ?>
                     </table>
                 </div>
             </div>
@@ -168,14 +168,14 @@
     <br/>
 
     <article class="post tag-image">
-        <img src="{$user.cavatar}#" class='img-left' alt='authorimage'>
+        <img src="<?php echo $user["cavatar"];?>" class='img-left' alt='authorimage'>
         <br/>
         <header class="post-header">
             <h2 class="post-title"><a href="post.html">your activities</a></h2>
             <br/>
             <div class="date-box">
                 <span class="date-outer">
-                    <span class="date-inner">lasst updated <time datetime="{$user.clastcrawl}">{$user.clastcrawl}</time></span>
+                    <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
                 </span>
             </div>
         </header>
@@ -212,8 +212,8 @@
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
-    <script type="text/javascript" src="assets/js/index.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="template/minimal/assets/js/index.js"></script>
+    <script type="text/javascript" src="template/minimal/assets/js/jquery.fitvids.js"></script>
     <script>
         $(document).ready(function(){
             // Target your .container, .wrapper, .post, etc.
@@ -226,14 +226,14 @@
             $(".content").fitVids();
         });
     </script>
-    <script src="assets/js/pace.js"></script>
+    <script src="template/minimal/assets/js/pace.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
 
     <script type="text/javascript">
-        var postCount = {$postCount};
-        var repostCount = {$repostCount};
+        var postCount = <?php echo $postCount;?>;
+        var repostCount = <?php echo $repostCount;?>;
 
         Morris.Donut({
             resize: true,
@@ -246,14 +246,14 @@
             ]
         });
 
-        var allPostTypeRegularCount =  {$postTypeRegularCount} + {$repostTypeRegularCount};
-        var allPostTypeLinkCount =     {$postTypeLinkCount} + {$repostTypeLinkCount};
-        var allPostTypeQuoteCount =    {$postTypeQuoteCount} + {$repostTypeQuoteCount};
-        var allPostTypeImageCount =    {$postTypeImageCount} + {$repostTypeImageCount};
-        var allPostTypeVideoCount =    {$postTypeVideoCount} + {$repostTypeVideoCount};
-        var allPostTypeFileCount =     {$postTypeFileCount} + {$repostTypeFileCount};
-        var allPostTypeReviewCount =   {$postTypeReviewCount} + {$repostTypeReviewCount};
-        var allPostTypeEventCount =    {$postTypeEventCount} + {$repostTypeEventCount};
+        var allPostTypeRegularCount =  <?php echo $postTypeRegularCount;?> + <?php echo $repostTypeRegularCount;?>;
+        var allPostTypeLinkCount =     <?php echo $postTypeLinkCount;?> + <?php echo $repostTypeLinkCount;?>;
+        var allPostTypeQuoteCount =    <?php echo $postTypeQuoteCount;?> + <?php echo $repostTypeQuoteCount;?>;
+        var allPostTypeImageCount =    <?php echo $postTypeImageCount;?> + <?php echo $repostTypeImageCount;?>;
+        var allPostTypeVideoCount =    <?php echo $postTypeVideoCount;?> + <?php echo $repostTypeVideoCount;?>;
+        var allPostTypeFileCount =     <?php echo $postTypeFileCount;?> + <?php echo $repostTypeFileCount;?>;
+        var allPostTypeReviewCount =   <?php echo $postTypeReviewCount;?> + <?php echo $repostTypeReviewCount;?>;
+        var allPostTypeEventCount =    <?php echo $postTypeEventCount;?> + <?php echo $repostTypeEventCount;?>;
 
         Morris.Donut({
             resize: true,
@@ -271,22 +271,22 @@
             ]
         });
 
-        var postCount = {$postCount};
-        var repostCount = {$repostCount};
+        var postCount = <?php echo $postCount;?>;
+        var repostCount = <?php echo $repostCount;?>;
 
         Morris.Donut({
             resize: true,
             element: 'donut-content-by-posttype-post',
             colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
             data: [
-                {label: "texts",    value: {$postTypeRegularCount}},
-                {label: "images",   value: {$postTypeImageCount}},
-                {label: "links",    value: {$postTypeLinkCount}},
-                {label: "quotes",   value: {$postTypeQuoteCount}},
-                {label: "videos",   value: {$postTypeVideoCount}},
-                {label: "files",    value: {$postTypeFileCount}},
-                {label: "reviews",  value: {$postTypeReviewCount}},
-                {label: "events",   value: {$postTypeEventCount}}
+                {label: "texts",    value: <?php echo $postTypeRegularCount;?>},
+                {label: "images",   value: <?php echo $postTypeImageCount;?>},
+                {label: "links",    value: <?php echo $postTypeLinkCount;?>},
+                {label: "quotes",   value: <?php echo $postTypeQuoteCount;?>},
+                {label: "videos",   value: <?php echo $postTypeVideoCount;?>},
+                {label: "files",    value: <?php echo $postTypeFileCount;?>},
+                {label: "reviews",  value: <?php echo $postTypeReviewCount;?>},
+                {label: "events",   value: <?php echo $postTypeEventCount;?>}
             ]
         });
 
@@ -294,14 +294,14 @@
             element: 'donut-content-by-posttype-repost',
             colors: ["#C10202", "#912525", "#7D0101", "#E03A3A", "#E06666"],
             data: [
-                {label: "texts",    value: {$repostTypeRegularCount}},
-                {label: "images",   value: {$repostTypeImageCount}},
-                {label: "links",    value: {$repostTypeLinkCount}},
-                {label: "quotes",   value: {$repostTypeQuoteCount}},
-                {label: "videos",   value: {$repostTypeVideoCount}},
-                {label: "files",    value: {$repostTypeFileCount}},
-                {label: "reviews",  value: {$repostTypeReviewCount}},
-                {label: "events",   value: {$repostTypeEventCount}}
+                {label: "texts",    value: <?php echo $repostTypeRegularCount;?>},
+                {label: "images",   value: <?php echo $repostTypeImageCount;?>},
+                {label: "links",    value: <?php echo $repostTypeLinkCount;?>},
+                {label: "quotes",   value: <?php echo $repostTypeQuoteCount;?>},
+                {label: "videos",   value: <?php echo $repostTypeVideoCount;?>},
+                {label: "files",    value: <?php echo $repostTypeFileCount;?>},
+                {label: "reviews",  value: <?php echo $repostTypeReviewCount;?>},
+                {label: "events",   value: <?php echo $repostTypeEventCount;?>}
             ]
         });
     </script>

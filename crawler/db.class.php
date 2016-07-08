@@ -24,7 +24,8 @@ class databaseConnection
 		}
 		catch(PDOException $e)
 		{
-			trigger_error("No database connection.", E_USER_ERROR);
+			trigger_error("No database connection.\n" . $e->getMessage(), E_USER_ERROR);
+            throw $e;
 		}
 	}
 
@@ -131,7 +132,7 @@ class databaseConnection
                 }
                 catch(PDOException $e)
                 {
-                    trigger_error($e->getMessage(), E_USER_NOTICE);
+                    //trigger_error($e->getMessage(), E_USER_NOTICE);
                 }
                 return $this->preparedStatements[$this->statementID]['lastInsertedID'];
                 break;
