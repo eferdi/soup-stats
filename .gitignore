@@ -50,5 +50,5 @@ Thumbs.db
 
 # db.configs
 #############
-#crawler/db.config.php
-#class/db.config.php
+crawler/db.config.php
+class/db.config.php
