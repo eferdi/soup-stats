@@ -52,7 +52,7 @@ class soupStatsDB extends databaseConnection
     
     public function getTopPosts($soupID)
     {
-        $sql = "select cpost, crepostcounter from tstatsposts where cuserid = :soupid and cposttype = 'POST' order by crepostcounter DESC limit 0,10";
+        $sql = "select cpost, crepostcounter from tstatsposts where cuserid = :soupid and cposttype = 'POST' order by crepostcounter DESC limit 0,50";
 
         $paramValues = array(":soupid"	=> $soupID);
 

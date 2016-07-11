@@ -1,6 +1,6 @@
 <?php
 	$DBConfig['server'] = "localhost";
-	$DBConfig['database'] = "a";
-	$DBConfig['user'] = "b";
-	$DBConfig['pw'] = "c";
+	$DBConfig['database'] = "c1soupstats";
+	$DBConfig['user'] = "c1soupstats";
+	$DBConfig['pw'] = "soup2014stats+";
 ?>
