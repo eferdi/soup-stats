@@ -118,14 +118,12 @@
                             <th>top</th>
                             <th>reposts</th>
                             <th>post</th>
-                            <th>type</th>
                         </tr>
                         {loop="topPosts"}
                         <tr>
                             <td>{$counter+1}</td>
                             <td>{$value.crepostcounter}</td>
-                            <td><a href="http://{$soupName}.soup.io/post/{$value.cpost|substr:4}">{$value.cpost}</a></td>
-                            <td>{$value.ccontenttype}</td>
+                            <td><a href="http://{$soupName}.soup.io/post/{$value.cpost|substr:4}"><img src="assets/images/icon_{$value.ccontenttype}.png" alt="{$value.ccontenttype} {$value.cpost}" style="width: 32px; height:32px; background-color: darkgray;"></a></td>
                         </tr>
                         {/loop}
                     </table>

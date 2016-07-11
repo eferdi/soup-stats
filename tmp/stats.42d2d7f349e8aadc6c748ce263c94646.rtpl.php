@@ -118,14 +118,12 @@
                             <th>top</th>
                             <th>reposts</th>
                             <th>post</th>
-                            <th>type</th>
                         </tr>
                         <?php $counter1=-1; if( isset($topPosts) && is_array($topPosts) && sizeof($topPosts) ) foreach( $topPosts as $key1 => $value1 ){ $counter1++; ?>
                         <tr>
                             <td><?php echo $counter1+1;?></td>
                             <td><?php echo $value1["crepostcounter"];?></td>
-                            <td><a href="http://<?php echo $soupName;?>.soup.io/post/<?php echo ( substr( $value1["cpost"], 4 ) );?>"><?php echo $value1["cpost"];?></a></td>
-                            <td><?php echo $value1["ccontenttype"];?></td>
+                            <td><a href="http://<?php echo $soupName;?>.soup.io/post/<?php echo ( substr( $value1["cpost"], 4 ) );?>"><img src="template/minimal/assets/images/icon_<?php echo $value1["ccontenttype"];?>.png" alt="<?php echo $value1["ccontenttype"];?> <?php echo $value1["cpost"];?>" style="width: 32px; height:32px; background-color: darkgray;"></a></td>
                         </tr>
                         <?php } ?>
                     </table>
