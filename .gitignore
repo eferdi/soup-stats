@@ -52,3 +52,5 @@ Thumbs.db
 #############
 crawler/db.config.php
 class/db.config.php
+
+tmp

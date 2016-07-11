@@ -18,6 +18,12 @@
 
     <link rel="alternate" type="application/rss+xml" title="Minimal Theme" href="template/minimal//rss/">
     <link rel="canonical" href="http://minimalv2-ghost1235.rhcloud.com/" />
+
+    <link rel="stylesheet" href="template/minimal///cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 </head>
 <body style="background-image:url('template/minimal/assets/images/bg.jpg');" >
     <header id="site-head">
@@ -38,7 +44,7 @@
             <br/>
             <div class="date-box">
                  <span class="date-outer">
-                 <span class="date-inner">lasst updated <time datetime="2014-01-15">15 Jan 2014</time></span>
+                 <span class="date-inner">last updated <time datetime="<?php echo $user["clastcrawl"];?>"><?php echo $user["clastcrawl"];?></time></span>
                  </span>
             </div>
         </header>
@@ -68,18 +74,18 @@
            <br/>
            <div class="date-box">
                  <span class="date-outer">
-                 <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
+                 <span class="date-inner">last updated <time datetime="<?php echo $user["clastcrawl"];?>"><?php echo $user["clastcrawl"];?></time></span>
                  </span>
             </div>
         </header>
         <section class="post-excerpt">
             <br>
             <div id="donuts-by-type" class="container-donut-posts">
-                <div class="donut-container">
+                <div class="donut-container clearfix">
                     <h3 class="donut-headline">post content</h3>
                     <div id="donut-content-by-posttype-post" class="donut-chart"></div>
                 </div>
-                <div class="donut-container">
+                <div class="donut-container clearfix">
                     <h3 class="donut-headline">repost content</h3>
                     <div id="donut-content-by-posttype-repost" class="donut-chart"></div>
                 </div>
@@ -98,7 +104,7 @@
             <br/>
             <div class="date-box">
                 <span class="date-outer">
-                    <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
+                    <span class="date-inner">last updated <time datetime="<?php echo $user["clastcrawl"];?>"><?php echo $user["clastcrawl"];?></time></span>
                 </span>
             </div>
         </header>
@@ -112,12 +118,14 @@
                             <th>top</th>
                             <th>reposts</th>
                             <th>post</th>
+                            <th>type</th>
                         </tr>
                         <?php $counter1=-1; if( isset($topPosts) && is_array($topPosts) && sizeof($topPosts) ) foreach( $topPosts as $key1 => $value1 ){ $counter1++; ?>
                         <tr>
                             <td><?php echo $counter1+1;?></td>
                             <td><?php echo $value1["crepostcounter"];?></td>
                             <td><a href="http://<?php echo $soupName;?>.soup.io/post/<?php echo ( substr( $value1["cpost"], 4 ) );?>"><?php echo $value1["cpost"];?></a></td>
+                            <td><?php echo $value1["ccontenttype"];?></td>
                         </tr>
                         <?php } ?>
                     </table>
@@ -175,7 +183,7 @@
             <br/>
             <div class="date-box">
                 <span class="date-outer">
-                    <span class="date-inner"><time datetime="2014-01-15">15 Jan 2014</time></span>
+                    <span class="date-inner">last updated <time datetime="<?php echo $user["clastcrawl"];?>"><?php echo $user["clastcrawl"];?></time></span>
                 </span>
             </div>
         </header>
@@ -210,7 +218,7 @@
 </div>
 </footer>
 
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!--script src="http://code.jquery.com/jquery-1.10.1.min.js"></script-->
 
     <script type="text/javascript" src="template/minimal/assets/js/index.js"></script>
     <script type="text/javascript" src="template/minimal/assets/js/jquery.fitvids.js"></script>
@@ -228,8 +236,8 @@
     </script>
     <script src="template/minimal/assets/js/pace.js"></script>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+    <!--script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script-->
 
     <script type="text/javascript">
         var postCount = <?php echo $postCount;?>;
